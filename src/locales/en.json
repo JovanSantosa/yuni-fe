@@ -1,0 +1,126 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About Us",
+    "features": "Why Choose Us",
+    "branches": "Locations",
+    "faq": "FAQ",
+    "catalog": "Product Catalog",
+    "whatsapp": "Chat WhatsApp",
+    "admin": "Admin",
+    "admin_full": "Admin Portal Login",
+    "theme_toggle": "Toggle Theme"
+  },
+  "hero": {
+    "badge": "TRUSTED",
+    "badge_sub": "Honest Pricing & Top Quality",
+    "btn_whatsapp": "Chat via WhatsApp",
+    "btn_catalog": "View Catalog",
+    "stat_years": "Years Established",
+    "stat_branches": "Store Locations",
+    "stat_customers": "Loyal Customers",
+    "condition_card_title": "100% Honest Condition",
+    "condition_card_desc": "New & Pre-owned with Warranty"
+  },
+  "about": {
+    "tag": "About Us",
+    "stat_customers": "Customers",
+    "stat_years": "Years",
+    "stat_branches": "Stores",
+    "btn_contact": "Contact Us",
+    "badge_location": "First Square 3rd Floor -- Taichung, Taiwan"
+  },
+  "categories": {
+    "tag": "Products & Services",
+    "title": "What We Offer.",
+    "view_all": "View Full Catalog",
+    "tag_phone": "In Stock",
+    "phone": "Smartphones",
+    "phone_desc": "New and pre-owned iPhones, Samsung, Xiaomi, OPPO, and more with certified quality.",
+    "tag_laptop": "New & Used",
+    "laptop": "Laptops & MacBook",
+    "laptop_desc": "MacBook Air, MacBook Pro, and Windows laptops from leading trusted brands.",
+    "tag_tablet": "Store Warranty",
+    "tablet": "iPad & Tablets",
+    "tablet_desc": "iPad Pro, iPad Air, iPad Mini, and Samsung Galaxy Tabs in great condition.",
+    "tag_acc": "Complete",
+    "acc": "Accessories",
+    "acc_desc": "Protective cases, tempered glass, camera protectors, powerbanks, earphones, and more."
+  },
+  "trade_in": {
+    "title": "Want to Trade In Your Old Device?",
+    "desc": "Bring your old phone, tablet, or laptop to Room 281 or Room 330. We evaluate fairly at the highest trade-in value!",
+    "btn": "Inquire Trade-In"
+  },
+  "features": {
+    "tag": "Why Yuni Counter",
+    "title": "Why Customers Trust Us.",
+    "subtitle": "It's not just about the best price, but the unwavering trust we have built over 20+ years.",
+    "f1_title": "100% Honest & Transparent",
+    "f1_desc": "We disclose true device condition without concealing anything. Integrity is our greatest asset.",
+    "f2_title": "Most Competitive Prices",
+    "f2_desc": "We provide unbeatable prices in First Square. Feel free to compare with any other store.",
+    "f3_title": "Trusted for 20+ Years",
+    "f3_desc": "Established in 2004, serving thousands of satisfied and repeat customers.",
+    "f4_title": "Trade-In Welcome",
+    "f4_desc": "Exchange your old phone or laptop easily with our best trade-in appraisal.",
+    "f5_title": "Complete Product Range",
+    "f5_desc": "Smartphones, MacBooks, tablets, and essential accessories all available in one place.",
+    "f6_title": "Convenient Location",
+    "f6_desc": "Located on the 3rd floor of First Square (Asean Square Pyramid), Taichung."
+  },
+  "branches": {
+    "tag": "Store Locations",
+    "title": "Visit Us.",
+    "desc": "Two branch locations on the 3rd Floor of First Square (Asean Square Pyramid), Taichung, Taiwan.",
+    "b1_badge": "MAIN BRANCH",
+    "b1_name": "Room 281",
+    "b1_addr": "First Square (Asean Square Pyramid)\n3rd Floor, Room 281\nTaichung, Taiwan",
+    "b1_since": "Operating since 2004",
+    "b2_badge": "NEW BRANCH",
+    "b2_name": "Room 330",
+    "b2_addr": "First Square (Asean Square Pyramid)\n3rd Floor, Room 330\nTaichung, Taiwan",
+    "b2_since": "Operating since 2024",
+    "maps_btn": "View on Google Maps",
+    "hours": "Operating Hours: Monday - Sunday, 10:00 - 21:00"
+  },
+  "testimonials": {
+    "tag": "Testimonials",
+    "title": "Trusted by Many.",
+    "stat_customers": "Happy Customers",
+    "stat_years": "Years Operating",
+    "stat_branches": "Store Locations",
+    "stat_categories": "Product Categories"
+  },
+  "cta": {
+    "tag": "Contact Us",
+    "title": "Looking for Phones, Laptops, or Accessories?",
+    "desc": "Contact us on WhatsApp for stock availability, pricing, or consultation. We are ready to assist you.",
+    "btn": "Chat via WhatsApp"
+  },
+  "faq": {
+    "tag": "FAQ",
+    "title": "Frequently Asked Questions"
+  },
+  "catalog_page": {
+    "tag": "Full Catalog",
+    "title_main": "Gadgets & Accessories at",
+    "subtitle": "Discover brand new & pre-owned smartphones, MacBooks, iPads, tablets, and original accessories in Taichung. Honest condition with transparent information.",
+    "currency_notice": "Currency: NT$ (TWD) • Est: 1 NT$ ≈ Rp 500",
+    "all_categories": "All Categories",
+    "search_placeholder": "Search iPhone, Samsung, MacBook...",
+    "all_conditions": "All Conditions",
+    "condition_new": "Brand New",
+    "condition_used": "Pre-owned",
+    "all_branches": "All Locations",
+    "branch_281": "Room 281",
+    "branch_330": "Room 330",
+    "sort_featured": "Featured",
+    "sort_price_asc": "Price: Low to High",
+    "sort_price_desc": "Price: High to Low",
+    "sort_name_asc": "Name A-Z",
+    "empty_title": "No Matching Products",
+    "empty_desc": "Try modifying your search keywords or resetting filters.",
+    "inquiry_btn": "Inquire This Item"
+  }
+}

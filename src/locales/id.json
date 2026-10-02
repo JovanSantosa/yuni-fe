@@ -1,0 +1,126 @@
+{
+  "nav": {
+    "home": "Beranda",
+    "about": "Tentang Kami",
+    "features": "Keunggulan",
+    "branches": "Lokasi Cabang",
+    "faq": "FAQ",
+    "catalog": "Katalog Produk",
+    "whatsapp": "Chat WhatsApp",
+    "admin": "Admin",
+    "admin_full": "Login Portal Admin",
+    "theme_toggle": "Ganti Mode Tampilan"
+  },
+  "hero": {
+    "badge": "TERPERCAYA",
+    "badge_sub": "Harga Jujur, Kualitas Terjamin",
+    "btn_whatsapp": "Hubungi WhatsApp",
+    "btn_catalog": "Lihat Katalog",
+    "stat_years": "Tahun Berdiri",
+    "stat_branches": "Cabang Toko",
+    "stat_customers": "Pelanggan Setia",
+    "condition_card_title": "100% Kondisi Terbuka",
+    "condition_card_desc": "Baru & Bekas Bergaransi"
+  },
+  "about": {
+    "tag": "Tentang Kami",
+    "stat_customers": "Pelanggan",
+    "stat_years": "Tahun",
+    "stat_branches": "Cabang",
+    "btn_contact": "Hubungi Kami",
+    "badge_location": "First Square Lantai 3 -- Taichung, Taiwan"
+  },
+  "categories": {
+    "tag": "Produk & Layanan",
+    "title": "Apa yang Kami Jual.",
+    "view_all": "Buka Katalog Lengkap",
+    "tag_phone": "Ready Stock",
+    "phone": "Handphone",
+    "phone_desc": "iPhone, Samsung, Xiaomi, OPPO, dan berbagai brand lainnya. Baru & bekas berkualitas.",
+    "tag_laptop": "Baru & Bekas",
+    "laptop": "Laptop & MacBook",
+    "laptop_desc": "MacBook Air, MacBook Pro, laptop Windows dari berbagai brand terpercaya.",
+    "tag_tablet": "Garansi Toko",
+    "tablet": "iPad & Tablet",
+    "tablet_desc": "iPad Pro, iPad Air, iPad Mini, Samsung Tab, dan tablet lainnya.",
+    "tag_acc": "Lengkap",
+    "acc": "Aksesoris",
+    "acc_desc": "Casing, tempered glass, pelindung kamera, powerbank, earphone, headset, dan lainnya."
+  },
+  "trade_in": {
+    "title": "Mau Tukar Tambah HP Lama Anda?",
+    "desc": "Bawa HP, tablet, atau laptop lama Anda ke Room 281 atau Room 330. Kami taksir dengan harga jujur tertinggi untuk upgrade ke unit baru!",
+    "btn": "Tanya Tukar Tambah"
+  },
+  "features": {
+    "tag": "Kenapa Yuni Counter",
+    "title": "Alasan Pelanggan Memilih Kami.",
+    "subtitle": "Bukan hanya soal harga, tapi soal kepercayaan yang telah kami bangun selama lebih dari 20 tahun.",
+    "f1_title": "100% Jujur & Transparan",
+    "f1_desc": "Kondisi setiap produk kami sampaikan apa adanya. Baru ya baru, bekas ya bekas. Tidak ada yang kami tutup-tutupi.",
+    "f2_title": "Harga Paling Kompetitif",
+    "f2_desc": "Kami menawarkan harga termurah di kawasan First Square. Bandingkan harga kami dengan toko lain.",
+    "f3_title": "Dipercaya 20+ Tahun",
+    "f3_desc": "Sejak 2004, ribuan pelanggan telah mempercayakan kebutuhan gadget mereka kepada kami.",
+    "f4_title": "Terima Tukar Tambah",
+    "f4_desc": "Tukarkan HP lama Anda di Yuni Counter dengan harga terbaik untuk upgrade ke perangkat baru.",
+    "f5_title": "Produk Lengkap",
+    "f5_desc": "Dari HP, laptop, MacBook, iPad, tablet, hingga aksesoris pendukung — semua tersedia di satu tempat.",
+    "f6_title": "Lokasi Strategis",
+    "f6_desc": "Terletak di First Square Lantai 3, Taichung — pusat belanja yang mudah dijangkau komunitas Asia Tenggara."
+  },
+  "branches": {
+    "tag": "Lokasi Toko",
+    "title": "Kunjungi Kami.",
+    "desc": "Dua lokasi di First Square (Asean Square Pyramid), Lantai 3, Taichung, Taiwan.",
+    "b1_badge": "CABANG UTAMA",
+    "b1_name": "Room 281",
+    "b1_addr": "First Square (Asean Square Pyramid)\nLantai 3, Room 281\nTaichung, Taiwan",
+    "b1_since": "Beroperasi sejak 2004",
+    "b2_badge": "CABANG BARU",
+    "b2_name": "Room 330",
+    "b2_addr": "First Square (Asean Square Pyramid)\nLantai 3, Room 330\nTaichung, Taiwan",
+    "b2_since": "Beroperasi sejak 2024",
+    "maps_btn": "Lihat di Google Maps",
+    "hours": "Jam Operasional: Senin - Minggu, 10:00 - 21:00"
+  },
+  "testimonials": {
+    "tag": "Kata Pelanggan",
+    "title": "Dipercaya Banyak Orang.",
+    "stat_customers": "Pelanggan Puas",
+    "stat_years": "Tahun Beroperasi",
+    "stat_branches": "Lokasi Toko",
+    "stat_categories": "Kategori Produk"
+  },
+  "cta": {
+    "tag": "Hubungi Kami",
+    "title": "Cari HP, Laptop, atau Aksesoris?",
+    "desc": "Hubungi kami via WhatsApp untuk tanya stok, harga, atau konsultasi. Kami siap membantu Anda menemukan gadget terbaik dengan harga termurah.",
+    "btn": "Chat via WhatsApp"
+  },
+  "faq": {
+    "tag": "FAQ",
+    "title": "Pertanyaan Umum"
+  },
+  "catalog_page": {
+    "tag": "Katalog Lengkap",
+    "title_main": "Pilihan Gadget & Aksesoris di",
+    "subtitle": "Temukan HP baru & bekas berkualitas, MacBook, iPad, tablet, dan aksesoris original di Taichung. Semua kondisi kami jelaskan jujur dan transparan tanpa ada yang ditutup-tutupi.",
+    "currency_notice": "Mata uang: NT$ (TWD) • Est: 1 NT$ ≈ Rp 500",
+    "all_categories": "Semua Kategori",
+    "search_placeholder": "Cari iPhone, Samsung, MacBook...",
+    "all_conditions": "Semua Kondisi",
+    "condition_new": "Kondisi Baru",
+    "condition_used": "Kondisi Bekas",
+    "all_branches": "Semua Lokasi",
+    "branch_281": "Room 281",
+    "branch_330": "Room 330",
+    "sort_featured": "Paling Unggulan",
+    "sort_price_asc": "Harga: Terendah",
+    "sort_price_desc": "Harga: Tertinggi",
+    "sort_name_asc": "Nama A-Z",
+    "empty_title": "Tidak Ada Produk yang Cocok",
+    "empty_desc": "Coba ubah kata kunci pencarian atau reset filter kategori & kondisi Anda.",
+    "inquiry_btn": "Tanya Unit Ini"
+  }
+}

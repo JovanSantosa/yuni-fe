@@ -1,0 +1,126 @@
+{
+  "nav": {
+    "home": "首頁",
+    "about": "關於我們",
+    "features": "店家優勢",
+    "branches": "門市據點",
+    "faq": "常見問題",
+    "catalog": "商品目錄",
+    "whatsapp": "WhatsApp 諮詢",
+    "admin": "後台",
+    "admin_full": "管理員登入",
+    "theme_toggle": "切換深淺模式"
+  },
+  "hero": {
+    "badge": "值得信賴",
+    "badge_sub": "誠信報價・品質保證",
+    "btn_whatsapp": "WhatsApp 立即諮詢",
+    "btn_catalog": "瀏覽商品目錄",
+    "stat_years": "創立年數",
+    "stat_branches": "實體門市",
+    "stat_customers": "老客戶支持",
+    "condition_card_title": "100% 誠實公開機況",
+    "condition_card_desc": "全新與優質二手皆有保固"
+  },
+  "about": {
+    "tag": "關於我們",
+    "stat_customers": "位滿意顧客",
+    "stat_years": "年專業信譽",
+    "stat_branches": "間實體門市",
+    "btn_contact": "聯絡我們",
+    "badge_location": "台中第一廣場 3 樓（東協廣場金字塔）"
+  },
+  "categories": {
+    "tag": "產品與服務",
+    "title": "主要營業項目",
+    "view_all": "查看完整商品目錄",
+    "tag_phone": "現貨供應",
+    "phone": "智慧型手機",
+    "phone_desc": "全新與優選二手 iPhone、Samsung、小米、OPPO 等各廠牌熱門機型。",
+    "tag_laptop": "全新與二手",
+    "laptop": "筆電 & MacBook",
+    "laptop_desc": "MacBook Air、MacBook Pro 及各廠牌高性價比 Windows 筆記型電腦。",
+    "tag_tablet": "實體保固",
+    "tablet": "iPad & 平板電腦",
+    "tablet_desc": "iPad Pro、iPad Air、iPad Mini 與 Samsung Tab 等多樣平板現貨。",
+    "tag_acc": "品項齊全",
+    "acc": "精選配件",
+    "acc_desc": "防摔殼、鋼化保護貼、鏡頭貼、行動電源、耳機及各式周邊配件。"
+  },
+  "trade_in": {
+    "title": "想舊機換新機（二手折抵）嗎？",
+    "desc": "歡迎將您的舊手機、平板或筆電帶至第一廣場 3 樓 281 或 330 室，以最高誠信行情為您折抵！",
+    "btn": "諮詢舊換新"
+  },
+  "features": {
+    "tag": "為何選擇我們",
+    "title": "廣大顧客信賴 Yuni Counter 的理由",
+    "subtitle": "不只給您最優惠的價格，更是 20 多年來始終如一的誠信與專業。",
+    "f1_title": "100% 誠信透明",
+    "f1_desc": "每台設備狀況真實告知。全新就是全新，二手絕不充新，無任何隱瞞欺瞞。",
+    "f2_title": "台中超高競爭力價格",
+    "f2_desc": "第一廣場商圈最划算行情，歡迎現場多方比價，感受我們的高性價比。",
+    "f3_title": "在地深耕 20+ 年",
+    "f3_desc": "自 2004 年創立至今，累積數千位忠實客戶，好口碑口耳相傳。",
+    "f4_title": "高價舊機折抵",
+    "f4_desc": "提供舊手機、平板、筆電現場專業估價，舊換新輕鬆無負擔。",
+    "f5_title": "現貨商品齊全",
+    "f5_desc": "從手機、MacBook、平板到防摔殼保護貼，一站購足所有 3C 需求。",
+    "f6_title": "交通便利好抵達",
+    "f6_desc": "位於台中火車站前第一廣場（東協廣場金字塔）3 樓，交通四通八達。"
+  },
+  "branches": {
+    "tag": "門市據點",
+    "title": "門市位置",
+    "desc": "台灣台中第一廣場（東協廣場金字塔）3 樓設有兩間實體門市，隨時為您服務。",
+    "b1_badge": "創始總店",
+    "b1_name": "281 室",
+    "b1_addr": "台中市第一廣場（東協廣場金字塔）\n3 樓 281 室",
+    "b1_since": "自 2004 年創立服務",
+    "b2_badge": "全新旗艦店",
+    "b2_name": "330 室",
+    "b2_addr": "台中市第一廣場（東協廣場金字塔）\n3 樓 330 室",
+    "b2_since": "2024 年擴大服務據點",
+    "maps_btn": "在 Google 地圖上查看",
+    "hours": "營業時間：週一至週日 10:00 - 21:00"
+  },
+  "testimonials": {
+    "tag": "顧客心得",
+    "title": "眾多客戶的真實推薦",
+    "stat_customers": "位滿意老客戶",
+    "stat_years": "年專業信譽",
+    "stat_branches": "間服務門市",
+    "stat_categories": "大產品分類"
+  },
+  "cta": {
+    "tag": "聯絡我們",
+    "title": "尋找手機、筆電或配件嗎？",
+    "desc": "歡迎隨時透過 WhatsApp 詢問最新現貨、報價或技術諮詢，我們竭誠為您服務。",
+    "btn": "WhatsApp 立即諮詢"
+  },
+  "faq": {
+    "tag": "常見問題",
+    "title": "常見問與答"
+  },
+  "catalog_page": {
+    "tag": "完整商品目錄",
+    "title_main": "Yuni Counter 精選設備與配件",
+    "subtitle": "尋找台中最優質的全新與二手智慧型手機、MacBook、iPad 及正品周邊配件。誠信揭露真實機況，提供最安心的購買體驗。",
+    "currency_notice": "計價幣別：新台幣 NT$ • 估算匯率：1 NT$ ≈ 500 印尼盾 (IDR)",
+    "all_categories": "所有分類",
+    "search_placeholder": "搜尋 iPhone、Samsung、MacBook、配件...",
+    "all_conditions": "所有機況",
+    "condition_new": "全新未拆",
+    "condition_used": "優選二手",
+    "all_branches": "所有門市",
+    "branch_281": "281 室",
+    "branch_330": "330 室",
+    "sort_featured": "熱門推薦",
+    "sort_price_asc": "價格：由低到高",
+    "sort_price_desc": "價格：由高到低",
+    "sort_name_asc": "名稱 A-Z",
+    "empty_title": "查無符合條件的商品",
+    "empty_desc": "請嘗試更換搜尋關鍵字，或重設分類與機況篩選條件。",
+    "inquiry_btn": "洽詢此商品"
+  }
+}
