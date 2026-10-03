@@ -1,0 +1,39 @@
+name: Auto Deploy Frontend
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Deploy to VPS via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          script: |
+            # Masuk ke direktori frontend di VPS
+            cd /var/www/yuni-frontend
+            
+            # Reset dan tarik kode terbaru dari branch main
+            git fetch --all
+            git reset --hard origin/main
+            git pull origin main
+            
+            # Install package npm
+            npm install
+            
+            # Rebuild project Next.js (akan memakan waktu dan RAM swap di VPS)
+            npm run build
+            
+            # Restart service PM2
+            pm2 restart yuni-frontend
+            
+            echo "✅ Deploy Frontend Selesai!"
