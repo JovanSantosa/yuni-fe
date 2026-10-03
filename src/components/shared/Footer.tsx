@@ -127,7 +127,7 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Bottom Bar */}
+        {/* Bottom Bar - CI/CD Auto Deploy Tested */}
         <div className="pt-6 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-[12px] text-white/30 font-light text-center md:text-left">
             &copy; {new Date().getFullYear()} {siteTitle}. Konter HP Terpercaya di Taichung, Taiwan.
