@@ -61,9 +61,9 @@ export default function PengaturanPage() {
 
   // Multi-language text state for Hero and About
   const [transValues, setTransValues] = useState({
-    hero_title: { id: "", "zh-TW": "", en: "" },
-    hero_subtitle: { id: "", "zh-TW": "", en: "" },
-    about_text: { id: "", "zh-TW": "", en: "" },
+    hero_title: { id: "", "zh-TW": "", en: "", vi: "", th: "" },
+    hero_subtitle: { id: "", "zh-TW": "", en: "", vi: "", th: "" },
+    about_text: { id: "", "zh-TW": "", en: "", vi: "", th: "" },
   });
 
   // Settings Data
@@ -135,17 +135,17 @@ export default function PengaturanPage() {
       // Parse translatable values
       const parseField = (val: any) => {
         if (typeof val === "object" && val !== null) {
-          return { id: val.id || "", "zh-TW": val["zh-TW"] || "", en: val.en || "" };
+          return { id: val.id || "", "zh-TW": val["zh-TW"] || "", en: val.en || "", vi: val.vi || "", th: val.th || "" };
         }
         if (typeof val === "string" && val.startsWith("{")) {
           try {
             const parsed = JSON.parse(val);
-            return { id: parsed.id || "", "zh-TW": parsed["zh-TW"] || "", en: parsed.en || "" };
+            return { id: parsed.id || "", "zh-TW": parsed["zh-TW"] || "", en: parsed.en || "", vi: parsed.vi || "", th: parsed.th || "" };
           } catch (e) {
-            return { id: val, "zh-TW": "", en: "" };
+            return { id: val, "zh-TW": "", en: "", vi: "", th: "" };
           }
         }
-        return { id: val || "", "zh-TW": "", en: "" };
+        return { id: val || "", "zh-TW": "", en: "", vi: "", th: "" };
       };
 
       setTransValues({
@@ -658,7 +658,7 @@ export default function PengaturanPage() {
                   </div>
 
                   {/* Language Selector Pills */}
-                  <div className="flex p-1 bg-muted rounded-xl">
+                  <div className="flex flex-wrap p-1 bg-muted rounded-xl gap-1">
                     <button
                       type="button"
                       onClick={() => setContentLang("id")}
@@ -676,6 +676,24 @@ export default function PengaturanPage() {
                       }`}
                     >
                       🇹🇼 繁體中文
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setContentLang("vi")}
+                      className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
+                        contentLang === "vi" ? "bg-[var(--card-bg)] shadow text-[var(--red)]" : "text-muted-foreground hover:text-foreground"
+                      }`}
+                    >
+                      🇻🇳 Tiếng Việt
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setContentLang("th")}
+                      className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
+                        contentLang === "th" ? "bg-[var(--card-bg)] shadow text-[var(--red)]" : "text-muted-foreground hover:text-foreground"
+                      }`}
+                    >
+                      🇹🇭 ภาษาไทย
                     </button>
                     <button
                       type="button"
@@ -708,6 +726,10 @@ export default function PengaturanPage() {
                             ? "台中最值得信賴的手機專賣店"
                             : contentLang === "en"
                             ? "Trusted Phone Store in Taichung"
+                            : contentLang === "vi"
+                            ? "Cửa hàng Điện thoại Đáng tin cậy tại Taichung"
+                            : contentLang === "th"
+                            ? "ร้านโทรศัพท์ที่เชื่อถือได้ใน Taichung"
                             : "Konter HP Terpercaya di Taichung"
                         }
                       />

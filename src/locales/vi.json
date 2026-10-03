@@ -1,0 +1,126 @@
+{
+  "nav": {
+    "home": "Trang chủ",
+    "about": "Về chúng tôi",
+    "features": "Tại sao chọn chúng tôi",
+    "branches": "Chi nhánh",
+    "faq": "Câu hỏi thường gặp",
+    "catalog": "Danh mục sản phẩm",
+    "whatsapp": "Chat WhatsApp",
+    "admin": "Quản trị",
+    "admin_full": "Đăng nhập Quản trị",
+    "theme_toggle": "Chuyển đổi giao diện"
+  },
+  "hero": {
+    "badge": "ĐÁNG TIN CẬY",
+    "badge_sub": "Báo giá trung thực & Chất lượng hàng đầu",
+    "btn_whatsapp": "Liên hệ WhatsApp ngay",
+    "btn_catalog": "Xem Danh mục",
+    "stat_years": "Năm thành lập",
+    "stat_branches": "Chi nhánh cửa hàng",
+    "stat_customers": "Khách hàng thân thiết",
+    "condition_card_title": "100% Trung thực về tình trạng",
+    "condition_card_desc": "Mới & Cũ đều có bảo hành"
+  },
+  "about": {
+    "tag": "Về chúng tôi",
+    "stat_customers": "Khách hàng",
+    "stat_years": "Năm hoạt động",
+    "stat_branches": "Cửa hàng",
+    "btn_contact": "Liên hệ với chúng tôi",
+    "badge_location": "First Square Tầng 3 -- Đài Trung, Đài Loan"
+  },
+  "categories": {
+    "tag": "Sản phẩm & Dịch vụ",
+    "title": "Sản phẩm chúng tôi cung cấp.",
+    "view_all": "Xem toàn bộ Danh mục",
+    "tag_phone": "Hàng có sẵn",
+    "phone": "Điện thoại thông minh",
+    "phone_desc": "iPhone, Samsung, Xiaomi, OPPO mới và đã qua sử dụng với chất lượng được chứng nhận.",
+    "tag_laptop": "Mới & Cũ",
+    "laptop": "Laptop & MacBook",
+    "laptop_desc": "MacBook Air, MacBook Pro và laptop Windows từ các thương hiệu đáng tin cậy.",
+    "tag_tablet": "Bảo hành cửa hàng",
+    "tablet": "iPad & Máy tính bảng",
+    "tablet_desc": "iPad Pro, iPad Air, iPad Mini và Samsung Galaxy Tab trong tình trạng tuyệt vời.",
+    "tag_acc": "Đầy đủ",
+    "acc": "Phụ kiện",
+    "acc_desc": "Ốp lưng bảo vệ, kính cường lực, bảo vệ camera, sạc dự phòng, tai nghe và hơn thế nữa."
+  },
+  "trade_in": {
+    "title": "Bạn muốn Thu cũ Đổi mới?",
+    "desc": "Hãy mang điện thoại, máy tính bảng hoặc laptop cũ của bạn đến Phòng 281 hoặc 330. Chúng tôi định giá công bằng với mức thu mua cao nhất!",
+    "btn": "Hỏi về Thu cũ Đổi mới"
+  },
+  "features": {
+    "tag": "Tại sao chọn Yuni Counter",
+    "title": "Lý do Khách hàng tin tưởng chúng tôi.",
+    "subtitle": "Không chỉ là mức giá tốt nhất, mà còn là niềm tin vững chắc chúng tôi đã xây dựng trong hơn 20 năm qua.",
+    "f1_title": "100% Trung thực & Minh bạch",
+    "f1_desc": "Chúng tôi tiết lộ tình trạng thực tế của thiết bị mà không che giấu bất cứ điều gì. Sự chính trực là tài sản lớn nhất của chúng tôi.",
+    "f2_title": "Giá cả Cạnh tranh nhất",
+    "f2_desc": "Chúng tôi cung cấp mức giá tốt nhất tại First Square. Xin mời so sánh với bất kỳ cửa hàng nào khác.",
+    "f3_title": "Đáng tin cậy hơn 20 năm",
+    "f3_desc": "Thành lập năm 2004, phục vụ hàng ngàn khách hàng hài lòng và quay lại.",
+    "f4_title": "Chào đón Thu cũ Đổi mới",
+    "f4_desc": "Đổi điện thoại hoặc laptop cũ của bạn dễ dàng với mức định giá thu mua tốt nhất của chúng tôi.",
+    "f5_title": "Dòng sản phẩm Đầy đủ",
+    "f5_desc": "Điện thoại, MacBook, máy tính bảng và các phụ kiện thiết yếu, tất cả đều có sẵn tại một nơi.",
+    "f6_title": "Vị trí Thuận tiện",
+    "f6_desc": "Tọa lạc tại tầng 3 First Square (Asean Square Pyramid), thành phố Đài Trung."
+  },
+  "branches": {
+    "tag": "Chi nhánh cửa hàng",
+    "title": "Hãy ghé thăm chúng tôi.",
+    "desc": "Hai chi nhánh tại Tầng 3 First Square (Asean Square Pyramid), Đài Trung, Đài Loan.",
+    "b1_badge": "CHI NHÁNH CHÍNH",
+    "b1_name": "Phòng 281",
+    "b1_addr": "First Square (Asean Square Pyramid)\nTầng 3, Phòng 281\nĐài Trung, Đài Loan",
+    "b1_since": "Hoạt động từ năm 2004",
+    "b2_badge": "CHI NHÁNH MỚI",
+    "b2_name": "Phòng 330",
+    "b2_addr": "First Square (Asean Square Pyramid)\nTầng 3, Phòng 330\nĐài Trung, Đài Loan",
+    "b2_since": "Hoạt động từ năm 2024",
+    "maps_btn": "Xem trên Google Maps",
+    "hours": "Giờ làm việc: Thứ Hai - Chủ Nhật, 10:00 - 21:00"
+  },
+  "testimonials": {
+    "tag": "Lời bình luận",
+    "title": "Được nhiều người tin tưởng.",
+    "stat_customers": "Khách hàng Hài lòng",
+    "stat_years": "Năm Hoạt động",
+    "stat_branches": "Chi nhánh Cửa hàng",
+    "stat_categories": "Danh mục Sản phẩm"
+  },
+  "cta": {
+    "tag": "Liên hệ với chúng tôi",
+    "title": "Bạn đang tìm Điện thoại, Laptop hay Phụ kiện?",
+    "desc": "Liên hệ với chúng tôi qua WhatsApp để biết tình trạng còn hàng, giá cả hoặc tư vấn. Chúng tôi luôn sẵn sàng hỗ trợ bạn.",
+    "btn": "Chat qua WhatsApp"
+  },
+  "faq": {
+    "tag": "FAQ",
+    "title": "Câu hỏi thường gặp"
+  },
+  "catalog_page": {
+    "tag": "Danh mục Đầy đủ",
+    "title_main": "Thiết bị & Phụ kiện tại",
+    "subtitle": "Khám phá điện thoại, MacBook, iPad, máy tính bảng và phụ kiện chính hãng mới & cũ tại Đài Trung. Tình trạng trung thực với thông tin minh bạch.",
+    "currency_notice": "Tiền tệ: NT$ (TWD) • Ước tính: 1 NT$ ≈ 500 Rp",
+    "all_categories": "Tất cả Danh mục",
+    "search_placeholder": "Tìm kiếm iPhone, Samsung, MacBook...",
+    "all_conditions": "Tất cả Tình trạng",
+    "condition_new": "Hàng mới",
+    "condition_used": "Đã qua sử dụng",
+    "all_branches": "Tất cả Địa điểm",
+    "branch_281": "Phòng 281",
+    "branch_330": "Phòng 330",
+    "sort_featured": "Nổi bật nhất",
+    "sort_price_asc": "Giá: Từ thấp đến cao",
+    "sort_price_desc": "Giá: Từ cao xuống thấp",
+    "sort_name_asc": "Tên A-Z",
+    "empty_title": "Không có Sản phẩm Phù hợp",
+    "empty_desc": "Hãy thử sửa đổi từ khóa tìm kiếm hoặc đặt lại bộ lọc.",
+    "inquiry_btn": "Hỏi về Mặt hàng này"
+  }
+}

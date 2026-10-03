@@ -70,6 +70,8 @@ export function Navbar() {
   const languages = [
     { code: "id", label: "Indonesia", flag: "🇮🇩" },
     { code: "zh-TW", label: "繁體中文", flag: "🇹🇼" },
+    { code: "vi", label: "Tiếng Việt", flag: "🇻🇳" },
+    { code: "th", label: "ภาษาไทย", flag: "🇹🇭" },
     { code: "en", label: "English", flag: "🇬🇧" },
   ];
 
