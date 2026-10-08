@@ -12,8 +12,8 @@ export default function NotFound() {
       <p className="max-w-md text-sm text-muted-foreground">
         Halaman admin yang Anda cari tidak tersedia atau rute telah berubah.
       </p>
-      <Button asChild>
-        <Link href="/admin/dashboard">Kembali ke Dashboard</Link>
+      <Button onClick={() => window.location.href = "/admin/dashboard"}>
+        Kembali ke Dashboard
       </Button>
     </div>
   );
