@@ -8,7 +8,6 @@ import {
   LayoutDashboard,
   Package,
   Tags,
-  Image as ImageIcon,
   Settings,
   ShoppingBag,
 } from "lucide-react";
@@ -17,7 +16,6 @@ const navItems = [
   { href: "/admin/dashboard", label: "Dashboard", icon: LayoutDashboard },
   { href: "/admin/produk", label: "Produk", icon: Package },
   { href: "/admin/kategori", label: "Kategori", icon: Tags },
-  { href: "/admin/banner", label: "Banner", icon: ImageIcon },
   { href: "/admin/pengaturan", label: "Pengaturan", icon: Settings },
 ];
 
