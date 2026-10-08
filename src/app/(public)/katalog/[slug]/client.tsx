@@ -28,12 +28,13 @@ export default function ProductDetailClient({ initialData, slug }: ClientProps) 
   );
 
   return (
-    <div className="container mx-auto px-4 sm:px-8 py-8 md:py-12">
+    <div className="container mx-auto px-4 sm:px-8 pt-[120px] md:pt-[140px] pb-16 md:pb-24">
       <Link
         href="/katalog"
-        className="inline-flex items-center text-sm font-medium text-muted-foreground hover:text-foreground transition-colors mb-8"
+        className="inline-flex items-center text-sm font-medium text-muted-foreground hover:text-[var(--red)] transition-colors mb-8 group"
       >
-        <ArrowLeft className="mr-2 h-4 w-4" /> {t("product_detail.back_to_catalog", "Kembali ke Katalog")}
+        <ArrowLeft className="mr-2 h-4 w-4 transition-transform group-hover:-translate-x-1" />
+        {t("product_detail.back_to_catalog", "Kembali ke Katalog")}
       </Link>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16">
@@ -125,8 +126,14 @@ export default function ProductDetailClient({ initialData, slug }: ClientProps) 
                 <Store className="h-5 w-5 text-muted-foreground" />
                 <div>
                   <p className="text-sm font-medium">{t("product_detail.location", "Lokasi Tersedia")}</p>
-                  <p className="text-sm text-muted-foreground capitalize">
-                    {product.branch === "both" ? "Room 330 & 281" : product.branch}
+                  <p className="text-sm text-muted-foreground">
+                    {product.branch === "both" 
+                      ? "Room 330 & 281" 
+                      : product.branch === "room330" 
+                      ? "Room 330" 
+                      : product.branch === "room281" 
+                      ? "Room 281" 
+                      : product.branch}
                   </p>
                 </div>
               </div>

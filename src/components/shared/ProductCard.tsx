@@ -2,20 +2,16 @@ import Image from "next/image";
 import Link from "next/link";
 import { Product } from "@/types/api";
 
-export function formatTWD(amount: string | number) {
-  return new Intl.NumberFormat("zh-TW", {
-    style: "currency",
-    currency: "TWD",
-    minimumFractionDigits: 0,
-  }).format(Number(amount));
+export function formatTWD(amount: string | number | null | undefined) {
+  const num = Number(amount);
+  if (isNaN(num)) return "NT$ 0";
+  return `NT$ ${num.toLocaleString("zh-TW", { minimumFractionDigits: 0, maximumFractionDigits: 0 })}`;
 }
 
-export function formatIDR(amount: string | number) {
-  return new Intl.NumberFormat("id-ID", {
-    style: "currency",
-    currency: "IDR",
-    minimumFractionDigits: 0,
-  }).format(Number(amount));
+export function formatIDR(amount: string | number | null | undefined) {
+  const num = Number(amount);
+  if (isNaN(num)) return "Rp 0";
+  return `Rp ${num.toLocaleString("id-ID", { minimumFractionDigits: 0, maximumFractionDigits: 0 })}`;
 }
 
 interface ProductCardProps {

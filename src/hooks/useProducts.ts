@@ -44,13 +44,13 @@ export function useProducts(params: UseProductsParams = {}) {
 
 export function useProduct(slug: string) {
   const { locale } = useLanguage();
-  const { data, error, isLoading, mutate } = useSWR<Product>(
+  const { data, error, isLoading, mutate } = useSWR<{ data: Product }>(
     slug ? `/products/${slug}?lang=${locale}` : null,
     swrFetcher
   );
 
   return {
-    product: data,
+    product: data?.data,
     isLoading,
     isError: error,
     mutate,
