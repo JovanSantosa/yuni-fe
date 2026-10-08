@@ -1,6 +1,7 @@
 import useSWR from "swr";
 import { swrFetcher } from "@/lib/api";
 import { Product, PaginatedResponse } from "@/types/api";
+import { useLanguage } from "@/context/LanguageContext";
 
 interface UseProductsParams {
   page?: number;
@@ -15,8 +16,10 @@ interface UseProductsParams {
 }
 
 export function useProducts(params: UseProductsParams = {}) {
+  const { locale } = useLanguage();
   // Build query string
   const query = new URLSearchParams();
+  query.append("lang", locale);
   Object.entries(params).forEach(([key, value]) => {
     if (value !== undefined && value !== "") {
       query.append(key, String(value));
@@ -40,8 +43,9 @@ export function useProducts(params: UseProductsParams = {}) {
 }
 
 export function useProduct(slug: string) {
+  const { locale } = useLanguage();
   const { data, error, isLoading, mutate } = useSWR<Product>(
-    slug ? `/products/${slug}` : null,
+    slug ? `/products/${slug}?lang=${locale}` : null,
     swrFetcher
   );
 

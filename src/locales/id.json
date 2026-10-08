@@ -16,6 +16,7 @@
     "badge_sub": "Harga Jujur, Kualitas Terjamin",
     "btn_whatsapp": "Hubungi WhatsApp",
     "btn_catalog": "Lihat Katalog",
+    "default_wa_message": "Halo Yuni Counter, saya tertarik dengan produk Anda dan ingin bertanya.",
     "stat_years": "Tahun Berdiri",
     "stat_branches": "Cabang Toko",
     "stat_customers": "Pelanggan Setia",
@@ -122,5 +123,16 @@
     "empty_title": "Tidak Ada Produk yang Cocok",
     "empty_desc": "Coba ubah kata kunci pencarian atau reset filter kategori & kondisi Anda.",
     "inquiry_btn": "Tanya Unit Ini"
+  },
+  "product_detail": {
+    "back_to_catalog": "Kembali ke Katalog",
+    "description": "Deskripsi",
+    "ready_stock": "Ready Stock",
+    "out_of_stock": "Stok Habis",
+    "location": "Lokasi Tersedia",
+    "stock_left": "Sisa Stok",
+    "unit": "Unit",
+    "buy_whatsapp": "Beli via WhatsApp",
+    "price_notice": "Harga dan ketersediaan stok dapat berubah sewaktu-waktu. Silakan hubungi admin untuk konfirmasi."
   }
 }

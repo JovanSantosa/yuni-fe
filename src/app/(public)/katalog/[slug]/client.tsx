@@ -10,6 +10,7 @@ import { formatTWD, formatIDR } from "@/components/shared/ProductCard";
 import { ArrowLeft, MessageCircle, Store, Tag } from "lucide-react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+import { useLanguage } from "@/context/LanguageContext";
 
 interface ClientProps {
   initialData: Product;
@@ -17,6 +18,7 @@ interface ClientProps {
 }
 
 export default function ProductDetailClient({ initialData, slug }: ClientProps) {
+  const { t } = useLanguage();
   // Use SWR to keep data fresh, but fallback to SSR initialData
   const { product: freshData } = useProduct(slug);
   const product = freshData || initialData;
@@ -31,7 +33,7 @@ export default function ProductDetailClient({ initialData, slug }: ClientProps) 
         href="/katalog"
         className="inline-flex items-center text-sm font-medium text-muted-foreground hover:text-foreground transition-colors mb-8"
       >
-        <ArrowLeft className="mr-2 h-4 w-4" /> Kembali ke Katalog
+        <ArrowLeft className="mr-2 h-4 w-4" /> {t("product_detail.back_to_catalog", "Kembali ke Katalog")}
       </Link>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16">
@@ -111,7 +113,7 @@ export default function ProductDetailClient({ initialData, slug }: ClientProps) 
           <div className="space-y-6 mb-10 flex-1">
             {product.description && (
               <div>
-                <h3 className="text-lg font-semibold mb-3">Deskripsi</h3>
+                <h3 className="text-lg font-semibold mb-3">{t("product_detail.description", "Deskripsi")}</h3>
                 <div className="prose prose-sm dark:prose-invert max-w-none text-muted-foreground leading-relaxed whitespace-pre-wrap">
                   {product.description}
                 </div>
@@ -122,7 +124,7 @@ export default function ProductDetailClient({ initialData, slug }: ClientProps) 
               <div className="flex items-center gap-3">
                 <Store className="h-5 w-5 text-muted-foreground" />
                 <div>
-                  <p className="text-sm font-medium">Lokasi Tersedia</p>
+                  <p className="text-sm font-medium">{t("product_detail.location", "Lokasi Tersedia")}</p>
                   <p className="text-sm text-muted-foreground capitalize">
                     {product.branch === "both" ? "Room 330 & 281" : product.branch}
                   </p>
@@ -131,9 +133,9 @@ export default function ProductDetailClient({ initialData, slug }: ClientProps) 
               <div className="flex items-center gap-3">
                 <Tag className="h-5 w-5 text-muted-foreground" />
                 <div>
-                  <p className="text-sm font-medium">Sisa Stok</p>
+                  <p className="text-sm font-medium">{t("product_detail.stock_left", "Sisa Stok")}</p>
                   <p className="text-sm text-muted-foreground">
-                    {product.stock} Unit
+                    {product.stock} {t("product_detail.unit", "Unit")}
                   </p>
                 </div>
               </div>
@@ -148,10 +150,10 @@ export default function ProductDetailClient({ initialData, slug }: ClientProps) 
               className="inline-flex w-full h-14 items-center justify-center rounded-md text-base font-semibold transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none bg-[var(--red)] hover:bg-[var(--red-hover)] text-white shadow-lg shadow-red-500/20 hover:scale-[0.99]"
             >
               <MessageCircle className="mr-2 h-5 w-5 fill-current" />
-              Beli via WhatsApp
+              {t("product_detail.buy_whatsapp", "Beli via WhatsApp")}
             </a>
             <p className="text-xs text-center text-muted-foreground mt-4 text-balance font-light">
-              Harga dan ketersediaan stok dapat berubah sewaktu-waktu. Silakan hubungi admin untuk konfirmasi.
+              {t("product_detail.price_notice", "Harga dan ketersediaan stok dapat berubah sewaktu-waktu. Silakan hubungi admin untuk konfirmasi.")}
             </p>
           </div>
         </div>

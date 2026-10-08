@@ -64,6 +64,7 @@ export default function PengaturanPage() {
     hero_title: { id: "", "zh-TW": "", en: "", vi: "", th: "" },
     hero_subtitle: { id: "", "zh-TW": "", en: "", vi: "", th: "" },
     about_text: { id: "", "zh-TW": "", en: "", vi: "", th: "" },
+    whatsapp_hero_message: { id: "", "zh-TW": "", en: "", vi: "", th: "" },
   });
 
   // Settings Data
@@ -152,6 +153,7 @@ export default function PengaturanPage() {
         hero_title: parseField(data.hero_title),
         hero_subtitle: parseField(data.hero_subtitle),
         about_text: parseField(data.about_text),
+        whatsapp_hero_message: parseField(data.whatsapp_hero_message),
       });
     }
   }, [data, form]);
@@ -164,6 +166,7 @@ export default function PengaturanPage() {
         hero_title: transValues.hero_title,
         hero_subtitle: transValues.hero_subtitle,
         about_text: transValues.about_text,
+        whatsapp_hero_message: transValues.whatsapp_hero_message,
       };
 
       await fetchApi("/admin/settings", {
@@ -771,6 +774,35 @@ export default function PengaturanPage() {
                       placeholder="Cerita dan sejarah Yuni Counter..."
                     />
                     <p className="text-[11px] text-muted-foreground font-light">Gunakan enter dua kali untuk memisahkan paragraf.</p>
+                  </div>
+
+                  <div className="space-y-2">
+                    <label className="text-xs font-semibold uppercase tracking-wider text-[var(--text-heading)]">
+                      Pesan WhatsApp Default Tanya-Tanya / Hero ({contentLang.toUpperCase()})
+                    </label>
+                    <Input
+                      value={transValues.whatsapp_hero_message[contentLang] || ""}
+                      onChange={(e) =>
+                        setTransValues({
+                          ...transValues,
+                          whatsapp_hero_message: { ...transValues.whatsapp_hero_message, [contentLang]: e.target.value },
+                        })
+                      }
+                      placeholder={
+                        contentLang === "zh-TW"
+                          ? "您好 Yuni Counter，我對您的商品有興趣..."
+                          : contentLang === "en"
+                          ? "Hello Yuni Counter, I am interested in your products..."
+                          : contentLang === "vi"
+                          ? "Xin chào Yuni Counter, tôi quan tâm đến..."
+                          : contentLang === "th"
+                          ? "สวัสดี Yuni Counter ฉันสนใจสินค้าของคุณ..."
+                          : "Halo Yuni Counter, saya tertarik dengan produk Anda dan ingin bertanya."
+                      }
+                    />
+                    <p className="text-[11px] text-muted-foreground">
+                      Pesan template pembuka saat pengunjung menekan tombol WhatsApp di Hero & Beranda.
+                    </p>
                   </div>
 
                   <div className="grid gap-5 grid-cols-3 pt-3 border-t">

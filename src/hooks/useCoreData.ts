@@ -3,6 +3,7 @@
 import useSWR from "swr";
 import { swrFetcher } from "@/lib/api";
 import { Category, Banner } from "@/types/api";
+import { useLanguage } from "@/context/LanguageContext";
 
 export interface Testimonial {
   id: number;
@@ -21,8 +22,9 @@ export interface Faq {
 }
 
 export function useCategories() {
+  const { locale } = useLanguage();
   const { data, error, isLoading, mutate } = useSWR<{ data: Category[] }>(
-    "/categories",
+    `/categories?lang=${locale}`,
     swrFetcher
   );
 
@@ -35,8 +37,9 @@ export function useCategories() {
 }
 
 export function useBanners() {
+  const { locale } = useLanguage();
   const { data, error, isLoading, mutate } = useSWR<{ data: Banner[] }>(
-    "/banners",
+    `/banners?lang=${locale}`,
     swrFetcher
   );
 
@@ -49,8 +52,9 @@ export function useBanners() {
 }
 
 export function useSettings() {
+  const { locale } = useLanguage();
   const { data, error, isLoading, mutate } = useSWR<{ data: Record<string, string> }>(
-    "/settings",
+    `/settings?lang=${locale}`,
     swrFetcher,
     {
       revalidateOnMount: true,
@@ -68,8 +72,9 @@ export function useSettings() {
 }
 
 export function useTestimonials() {
+  const { locale } = useLanguage();
   const { data, error, isLoading, mutate } = useSWR<{ data: Testimonial[] }>(
-    "/testimonials",
+    `/testimonials?lang=${locale}`,
     swrFetcher,
     {
       revalidateOnMount: true,
@@ -87,8 +92,9 @@ export function useTestimonials() {
 }
 
 export function useFaqs() {
+  const { locale } = useLanguage();
   const { data, error, isLoading, mutate } = useSWR<{ data: Faq[] }>(
-    "/faqs",
+    `/faqs?lang=${locale}`,
     swrFetcher,
     {
       revalidateOnMount: true,

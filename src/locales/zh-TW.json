@@ -16,6 +16,7 @@
     "badge_sub": "誠信報價・品質保證",
     "btn_whatsapp": "WhatsApp 立即諮詢",
     "btn_catalog": "瀏覽商品目錄",
+    "default_wa_message": "您好 Yuni Counter，我對您的商品有興趣，想諮詢詳情。",
     "stat_years": "創立年數",
     "stat_branches": "實體門市",
     "stat_customers": "老客戶支持",
@@ -120,7 +121,18 @@
     "sort_price_desc": "價格：由高到低",
     "sort_name_asc": "名稱 A-Z",
     "empty_title": "查無符合條件的商品",
-    "empty_desc": "請嘗試更換搜尋關鍵字，或重設分類與機況篩選條件。",
-    "inquiry_btn": "洽詢此商品"
+    "empty_desc": "請嘗試更換搜尋關鍵字，或重設篩選條件。",
+    "inquiry_btn": "詢問此商品"
+  },
+  "product_detail": {
+    "back_to_catalog": "返回商品目錄",
+    "description": "商品說明",
+    "ready_stock": "現貨供應",
+    "out_of_stock": "暫無庫存",
+    "location": "門市地點",
+    "stock_left": "剩餘數量",
+    "unit": "台",
+    "buy_whatsapp": "透過 WhatsApp 購買 / 諮詢",
+    "price_notice": "價格與庫存隨時變動，購買前請先聯繫專人確認。"
   }
 }

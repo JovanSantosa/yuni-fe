@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useProducts } from "@/hooks/useProducts";
-import { useCategories } from "@/hooks/useCoreData";
+import { useCategories, useSettings } from "@/hooks/useCoreData";
 import { ProductCard } from "@/components/shared/ProductCard";
 import { Search } from "lucide-react";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -10,6 +10,7 @@ import { useLanguage } from "@/context/LanguageContext";
 
 export default function KatalogPage() {
   const { t } = useLanguage();
+  const { settings } = useSettings();
   const [search, setSearch] = useState("");
   const [debouncedSearch, setDebouncedSearch] = useState("");
   const [category, setCategory] = useState<string>("all");
@@ -29,6 +30,12 @@ export default function KatalogPage() {
   };
 
   const { categories } = useCategories();
+  
+  const defaultWaText = encodeURIComponent(
+    settings?.whatsapp_hero_message || 
+    t("hero.default_wa_message", "Halo Yuni Counter, saya tertarik dengan produk Anda dan ingin bertanya.")
+  );
+  const whatsappLink = `https://wa.me/${settings?.whatsapp_number?.replace(/\D/g, '') || "886987872888"}?text=${defaultWaText}`;
   
   let sort_by = "created_at";
   let sort_order = "desc";
@@ -208,14 +215,14 @@ export default function KatalogPage() {
               </p>
             </div>
             
-            <a 
-              href="https://wa.me/886987872888?text=Halo%20Yuni%20Counter%2C%20saya%20mau%20konsultasi%20tukar%20tambah%20HP" 
-              target="_blank" 
-              rel="noreferrer" 
-              className="btn-gradient-cta shrink-0 relative z-10 whitespace-nowrap !px-6 !py-3.5"
+            <a
+              href={whatsappLink}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full font-bold text-sm tracking-wide transition-all shadow-md bg-[var(--red)] text-white hover:bg-[var(--red-dark)] hover:shadow-lg active:scale-95"
             >
-              {t("trade_in.btn", "Tanya Tukar Tambah")}
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+              {t("trade_in.btn", "Konsultasi Tukar Tambah Sekarang")}
+              <ArrowRight className="w-4 h-4" />
             </a>
           </div>
 

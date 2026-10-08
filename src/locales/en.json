@@ -16,6 +16,7 @@
     "badge_sub": "Honest Pricing & Top Quality",
     "btn_whatsapp": "Chat via WhatsApp",
     "btn_catalog": "View Catalog",
+    "default_wa_message": "Hello Yuni Counter, I am interested in your products and would like to ask a question.",
     "stat_years": "Years Established",
     "stat_branches": "Store Locations",
     "stat_customers": "Loyal Customers",
@@ -122,5 +123,16 @@
     "empty_title": "No Matching Products",
     "empty_desc": "Try modifying your search keywords or resetting filters.",
     "inquiry_btn": "Inquire This Item"
+  },
+  "product_detail": {
+    "back_to_catalog": "Back to Catalog",
+    "description": "Description",
+    "ready_stock": "Ready Stock",
+    "out_of_stock": "Out of Stock",
+    "location": "Available Location",
+    "stock_left": "Stock Left",
+    "unit": "Units",
+    "buy_whatsapp": "Buy via WhatsApp",
+    "price_notice": "Prices and stock availability are subject to change. Please contact admin to confirm."
   }
 }

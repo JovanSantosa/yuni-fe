@@ -6,12 +6,14 @@ import { usePathname } from "next/navigation";
 import { ShoppingBag, Moon, Sun, X, LogIn, Globe, ChevronDown } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useLanguage, Locale } from "@/context/LanguageContext";
+import { useSettings } from "@/hooks/useCoreData";
 import { useSWRConfig } from "swr";
 
 export function Navbar() {
   const pathname = usePathname();
   const { theme, setTheme, systemTheme } = useTheme();
   const { locale, setLocale, t } = useLanguage();
+  const { settings } = useSettings();
   const { mutate } = useSWRConfig();
 
   const [mounted, setMounted] = useState(false);
@@ -62,9 +64,9 @@ export function Navbar() {
     setLocale(newLocale);
     setIsLangDropdownOpen(false);
     // Revalidate public data from backend with new Accept-Language
-    mutate("/settings");
-    mutate("/faqs");
-    mutate("/testimonials");
+    mutate(`/settings?lang=${newLocale}`);
+    mutate(`/faqs?lang=${newLocale}`);
+    mutate(`/testimonials?lang=${newLocale}`);
   };
 
   const languages = [
@@ -76,6 +78,12 @@ export function Navbar() {
   ];
 
   const currentLang = languages.find((l) => l.code === locale) || languages[0];
+
+  const defaultWaText = encodeURIComponent(
+    settings?.whatsapp_hero_message || 
+    t("hero.default_wa_message", "Halo Yuni Counter, saya tertarik dengan produk Anda dan ingin bertanya.")
+  );
+  const whatsappLink = `https://wa.me/${settings?.whatsapp_number?.replace(/\D/g, '') || "886987872888"}?text=${defaultWaText}`;
 
   const navLinks = [
     { name: t("nav.home", "Beranda"), href: "/#hero", sectionId: "hero" },
@@ -190,7 +198,7 @@ export function Navbar() {
           )}
 
           <a
-            href="https://wa.me/886987872888?text=Halo%2C%20saya%20tertarik%20dengan%20produk%20di%20Yuni%20Counter"
+            href={whatsappLink}
             target="_blank"
             rel="noreferrer"
             className="btn-gradient-cta !py-2.5 !px-5 !text-[13px]"
@@ -303,7 +311,7 @@ export function Navbar() {
         </Link>
 
         <a
-          href="https://wa.me/886987872888?text=Halo%2C%20saya%20tertarik%20dengan%20produk%20di%20Yuni%20Counter"
+          href={whatsappLink}
           target="_blank"
           rel="noreferrer"
           className="btn-gradient-cta w-full max-w-xs text-center justify-center"

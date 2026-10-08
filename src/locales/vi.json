@@ -16,6 +16,7 @@
     "badge_sub": "Báo giá trung thực & Chất lượng hàng đầu",
     "btn_whatsapp": "Liên hệ WhatsApp ngay",
     "btn_catalog": "Xem Danh mục",
+    "default_wa_message": "Xin chào Yuni Counter, tôi quan tâm đến các sản phẩm của bạn và muốn được tư vấn.",
     "stat_years": "Năm thành lập",
     "stat_branches": "Chi nhánh cửa hàng",
     "stat_customers": "Khách hàng thân thiết",
@@ -122,5 +123,16 @@
     "empty_title": "Không có Sản phẩm Phù hợp",
     "empty_desc": "Hãy thử sửa đổi từ khóa tìm kiếm hoặc đặt lại bộ lọc.",
     "inquiry_btn": "Hỏi về Mặt hàng này"
+  },
+  "product_detail": {
+    "back_to_catalog": "Quay lại Danh mục",
+    "description": "Mô tả chi tiết",
+    "ready_stock": "Có sẵn hàng",
+    "out_of_stock": "Hết hàng",
+    "location": "Chi nhánh có sẵn",
+    "stock_left": "Số lượng còn",
+    "unit": "Chiếc",
+    "buy_whatsapp": "Mua qua WhatsApp",
+    "price_notice": "Giá cả và số lượng hàng có thể thay đổi bất cứ lúc nào. Vui lòng liên hệ quản trị viên để xác nhận."
   }
 }
