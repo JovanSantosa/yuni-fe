@@ -10,6 +10,7 @@ import {
   Tags,
   Settings,
   ShoppingBag,
+  User,
 } from "lucide-react";
 
 const navItems = [
@@ -17,6 +18,7 @@ const navItems = [
   { href: "/admin/produk", label: "Produk", icon: Package },
   { href: "/admin/kategori", label: "Kategori", icon: Tags },
   { href: "/admin/pengaturan", label: "Pengaturan", icon: Settings },
+  { href: "/admin/profil", label: "Profil Akun", icon: User },
 ];
 
 export function Sidebar({ onItemClick }: { onItemClick?: () => void } = {}) {

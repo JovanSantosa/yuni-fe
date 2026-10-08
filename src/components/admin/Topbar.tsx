@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { fetchApi } from "@/lib/api";
 import { removeToken } from "@/lib/auth";
 import { useRouter } from "next/navigation";
@@ -83,6 +84,13 @@ export function Topbar() {
                 </p>
               </div>
             </DropdownMenuLabel>
+            <DropdownMenuSeparator />
+            <DropdownMenuItem asChild>
+              <Link href="/admin/profil" className="cursor-pointer flex items-center w-full">
+                <User className="mr-2 h-4 w-4" />
+                <span>Profil Akun</span>
+              </Link>
+            </DropdownMenuItem>
             <DropdownMenuSeparator />
             <DropdownMenuItem onClick={handleLogout} className="text-destructive cursor-pointer focus:bg-destructive/10 focus:text-destructive">
               <LogOut className="mr-2 h-4 w-4" />
