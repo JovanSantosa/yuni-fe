@@ -86,7 +86,9 @@ export function Topbar() {
             </DropdownMenuLabel>
             <DropdownMenuSeparator />
             <DropdownMenuItem
-              onClick={() => router.push("/admin/profil")}
+              onClick={() => {
+                window.location.href = "/admin/profil";
+              }}
               className="cursor-pointer"
             >
               <User className="mr-2 h-4 w-4" />
