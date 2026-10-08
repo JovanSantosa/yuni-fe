@@ -383,7 +383,7 @@ export default function PengaturanPage() {
                       name="phone_number"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Nomor Telepon</FormLabel>
+                          <FormLabel>Nomor Telepon Toko</FormLabel>
                           <FormControl>
                             <Input placeholder="0987-872-888" {...field} />
                           </FormControl>
@@ -406,6 +406,23 @@ export default function PengaturanPage() {
                       )}
                     />
                   </div>
+
+                  <FormField
+                    control={form.control}
+                    name="whatsapp_default_message"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Default Pesan WhatsApp Pembelian Produk</FormLabel>
+                        <FormControl>
+                          <Input placeholder="Halo Yuni Counter, saya tertarik dengan {product_name}" {...field} />
+                        </FormControl>
+                        <FormDescription>
+                          Template pesan ketika pelanggan menekan tombol Beli/Tanya Produk di katalog. Gunakan token <code>{'{product_name}'}</code> untuk nama barang otomatis.
+                        </FormDescription>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
 
                   <div className="grid gap-5 sm:grid-cols-2">
                     <FormField

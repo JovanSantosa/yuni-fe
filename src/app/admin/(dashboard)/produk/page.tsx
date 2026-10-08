@@ -356,7 +356,13 @@ export default function ProdukPage() {
                   <FormItem>
                     <FormLabel>Kategori</FormLabel>
                     <Select onValueChange={(val) => field.onChange(Number(val))} value={String(field.value || "")}>
-                      <FormControl><SelectTrigger><SelectValue placeholder="Pilih kategori" /></SelectTrigger></FormControl>
+                      <FormControl>
+                        <SelectTrigger>
+                          <SelectValue placeholder="Pilih kategori">
+                            {categories?.find((c) => String(c.id) === String(field.value))?.name || "Pilih kategori"}
+                          </SelectValue>
+                        </SelectTrigger>
+                      </FormControl>
                       <SelectContent>
                         {categories?.map((cat) => (
                           <SelectItem key={cat.id} value={String(cat.id)}>{cat.name}</SelectItem>
@@ -383,7 +389,13 @@ export default function ProdukPage() {
                   <FormItem>
                     <FormLabel>Kondisi</FormLabel>
                     <Select onValueChange={field.onChange} value={field.value}>
-                      <FormControl><SelectTrigger><SelectValue /></SelectTrigger></FormControl>
+                      <FormControl>
+                        <SelectTrigger>
+                          <SelectValue>
+                            {field.value === "new" ? "Baru" : field.value === "used" ? "Bekas" : "Pilih kondisi"}
+                          </SelectValue>
+                        </SelectTrigger>
+                      </FormControl>
                       <SelectContent>
                         <SelectItem value="new">Baru</SelectItem>
                         <SelectItem value="used">Bekas</SelectItem>
@@ -399,7 +411,13 @@ export default function ProdukPage() {
                   <FormItem>
                     <FormLabel>Lokasi Tersedia</FormLabel>
                     <Select onValueChange={field.onChange} value={field.value}>
-                      <FormControl><SelectTrigger><SelectValue /></SelectTrigger></FormControl>
+                      <FormControl>
+                        <SelectTrigger>
+                          <SelectValue>
+                            {field.value === "both" ? "Keduanya (Room 330 & 281)" : field.value === "room330" ? "Room 330 Saja" : field.value === "room281" ? "Room 281 Saja" : "Pilih lokasi"}
+                          </SelectValue>
+                        </SelectTrigger>
+                      </FormControl>
                       <SelectContent>
                         <SelectItem value="both">Keduanya (Room 330 & 281)</SelectItem>
                         <SelectItem value="room330">Room 330 Saja</SelectItem>
