@@ -277,7 +277,7 @@ export default function ProdukPage() {
                   <TableCell>
                     <div className="relative w-12 h-12 rounded-md overflow-hidden bg-muted border">
                       {prod.images?.[0] ? (
-                        <Image src={prod.images[0].url} alt="" fill className="object-cover" />
+                        <Image src={prod.images[0].url} alt="" fill unoptimized className="object-cover" />
                       ) : (
                         <div className="flex h-full items-center justify-center text-xs text-muted-foreground">No img</div>
                       )}
@@ -461,7 +461,7 @@ export default function ProdukPage() {
               <div className="grid grid-cols-4 gap-4">
                 {editingProduct?.images?.map((img) => (
                   <div key={img.id} className="relative group aspect-square rounded-lg border overflow-hidden bg-muted">
-                    <Image src={img.url} alt="" fill className="object-cover" />
+                    <Image src={img.url} alt="" fill unoptimized className="object-cover" />
                     <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                       <Button variant="destructive" size="icon" className="h-8 w-8" onClick={() => handleDeleteImage(img.id)}>
                         <Trash2 className="h-4 w-4" />
