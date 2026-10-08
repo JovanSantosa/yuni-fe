@@ -1,11 +1,20 @@
 "use client";
 
+import { useState } from "react";
 import { fetchApi } from "@/lib/api";
 import { removeToken } from "@/lib/auth";
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
-import { LogOut, User } from "lucide-react";
+import { LogOut, User, Menu } from "lucide-react";
 import { toast } from "sonner";
+import { Sidebar } from "@/components/admin/Sidebar";
+import {
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+  SheetHeader,
+  SheetTitle,
+} from "@/components/ui/sheet";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -17,6 +26,7 @@ import {
 
 export function Topbar() {
   const router = useRouter();
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const handleLogout = async () => {
     try {
@@ -32,16 +42,38 @@ export function Topbar() {
   };
 
   return (
-    <header className="h-16 border-b bg-background flex items-center justify-between px-6 sticky top-0 z-40">
+    <header className="h-16 border-b bg-background flex items-center justify-between px-4 md:px-6 sticky top-0 z-40">
       <div className="flex items-center gap-4">
-        {/* Placeholder for Mobile Sidebar Trigger if needed */}
+        {/* Mobile Sidebar Sheet */}
+        <div className="md:hidden">
+          <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
+            <SheetTrigger
+              render={
+                <Button variant="ghost" size="icon" className="h-9 w-9">
+                  <Menu className="h-5 w-5" />
+                  <span className="sr-only">Toggle Sidebar</span>
+                </Button>
+              }
+            />
+            <SheetContent side="left" className="p-0 w-64 border-r">
+              <SheetHeader className="sr-only">
+                <SheetTitle>Navigasi Admin</SheetTitle>
+              </SheetHeader>
+              <Sidebar onItemClick={() => setMobileMenuOpen(false)} />
+            </SheetContent>
+          </Sheet>
+        </div>
       </div>
 
       <div className="flex items-center gap-4">
         <DropdownMenu>
-          <DropdownMenuTrigger render={<Button variant="ghost" className="relative h-9 w-9 rounded-full bg-muted/50 border" />}>
-            <User className="h-4 w-4 text-muted-foreground" />
-          </DropdownMenuTrigger>
+          <DropdownMenuTrigger
+            render={
+              <Button variant="ghost" className="relative h-9 w-9 rounded-full bg-muted/50 border flex items-center justify-center p-0">
+                <User className="h-4 w-4 text-muted-foreground" />
+              </Button>
+            }
+          />
           <DropdownMenuContent className="w-56" align="end">
             <DropdownMenuLabel className="font-normal">
               <div className="flex flex-col space-y-1">

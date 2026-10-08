@@ -19,13 +19,17 @@ const navItems = [
   { href: "/admin/pengaturan", label: "Pengaturan", icon: Settings },
 ];
 
-export function Sidebar() {
+export function Sidebar({ onItemClick }: { onItemClick?: () => void } = {}) {
   const pathname = usePathname();
 
   return (
     <div className="flex flex-col h-full bg-sidebar border-r border-sidebar-border">
       <div className="p-6">
-        <Link href="/" className="flex items-center gap-2 text-sidebar-foreground transition-opacity hover:opacity-80">
+        <Link 
+          href="/" 
+          onClick={onItemClick}
+          className="flex items-center gap-2 text-sidebar-foreground transition-opacity hover:opacity-80"
+        >
           <div className="flex h-8 w-8 items-center justify-center rounded-md bg-sidebar-primary text-sidebar-primary-foreground">
             <ShoppingBag className="h-5 w-5" />
           </div>
@@ -36,7 +40,11 @@ export function Sidebar() {
         {navItems.map((item) => {
           const isActive = pathname === item.href || pathname.startsWith(`${item.href}/`);
           return (
-            <Link key={item.href} href={item.href} className={cn(
+            <Link 
+              key={item.href} 
+              href={item.href} 
+              onClick={onItemClick}
+              className={cn(
               "flex w-full justify-start items-center gap-3 h-10 px-4 rounded-md transition-colors",
               isActive 
                 ? "bg-sidebar-accent text-sidebar-accent-foreground font-medium" 
