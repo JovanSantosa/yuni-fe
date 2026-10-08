@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useProducts } from "@/hooks/useProducts";
 import { useCategories, useSettings } from "@/hooks/useCoreData";
 import { ProductCard } from "@/components/shared/ProductCard";
-import { Search } from "lucide-react";
+import { Search, ArrowRight } from "lucide-react";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useLanguage } from "@/context/LanguageContext";
 
