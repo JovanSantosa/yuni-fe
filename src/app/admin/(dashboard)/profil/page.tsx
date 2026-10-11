@@ -2,18 +2,18 @@
 
 import { useEffect, useState } from "react";
 import useSWR from "swr";
-import { fetchApi, swrFetcher } from "@/lib/api";
+import { fetchApi } from "@/lib/api";
 import { toast } from "sonner";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import { User, Mail, Shield, KeyRound, Loader2, CheckCircle2 } from "lucide-react";
 
+interface UserData {
+  user: { id: number; name: string; email: string };
+}
+
 export default function ProfilPage() {
-  const { data: userData, isLoading } = useSWR<{ user: { id: number; name: string; email: string } }>(
+  const { data: userData, isLoading } = useSWR<UserData>(
     "/user",
-    swrFetcher
+    (url: string) => fetchApi(url, { requireAuth: true })
   );
 
   const [name, setName] = useState("");
@@ -59,12 +59,21 @@ export default function ProfilPage() {
       setCurrentPassword("");
       setNewPassword("");
       setConfirmPassword("");
-    } catch (err: any) {
-      toast.error(err.message || "Gagal memperbarui password");
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : "Gagal memperbarui password";
+      toast.error(message);
     } finally {
       setIsUpdating(false);
     }
   };
+
+  if (isLoading) {
+    return (
+      <div className="flex h-[50vh] items-center justify-center">
+        <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" />
+      </div>
+    );
+  }
 
   return (
     <div className="space-y-6">
@@ -77,34 +86,32 @@ export default function ProfilPage() {
 
       <div className="grid gap-6 md:grid-cols-2">
         {/* Info Akun */}
-        <Card>
-          <CardHeader>
-            <div className="flex items-center gap-2">
-              <User className="h-5 w-5 text-primary" />
-              <CardTitle>Informasi Akun</CardTitle>
-            </div>
-            <CardDescription>
-              Detail identitas dan role yang terdaftar dalam sistem.
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="space-y-4">
+        <div className="rounded-xl border bg-card p-6 text-card-foreground shadow-sm ring-1 ring-foreground/10">
+          <div className="flex items-center gap-2 mb-1">
+            <User className="h-5 w-5 text-primary" />
+            <h2 className="text-base font-semibold">Informasi Akun</h2>
+          </div>
+          <p className="text-sm text-muted-foreground mb-5">
+            Detail identitas dan role yang terdaftar dalam sistem.
+          </p>
+          <div className="space-y-4">
             <div className="space-y-2">
-              <Label htmlFor="admin-name">Nama Lengkap</Label>
-              <Input
+              <label htmlFor="admin-name" className="text-sm font-medium">Nama Lengkap</label>
+              <input
                 id="admin-name"
                 value={name}
-                disabled
-                className="bg-muted/50"
+                readOnly
+                className="flex h-9 w-full rounded-lg border border-input bg-muted/50 px-3 py-1 text-sm shadow-sm cursor-default opacity-70"
               />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="admin-email">Alamat Email</Label>
+              <label htmlFor="admin-email" className="text-sm font-medium">Alamat Email</label>
               <div className="relative">
-                <Input
+                <input
                   id="admin-email"
                   value={email}
-                  disabled
-                  className="bg-muted/50 pr-10"
+                  readOnly
+                  className="flex h-9 w-full rounded-lg border border-input bg-muted/50 px-3 py-1 pr-10 text-sm shadow-sm cursor-default opacity-70"
                 />
                 <Mail className="absolute right-3 top-2.5 h-4 w-4 text-muted-foreground" />
               </div>
@@ -113,68 +120,71 @@ export default function ProfilPage() {
               <Shield className="h-4 w-4 text-emerald-500" />
               <span>Role: Super Administrator (Full Access)</span>
             </div>
-          </CardContent>
-        </Card>
+          </div>
+        </div>
 
         {/* Ganti Password */}
-        <Card>
-          <CardHeader>
-            <div className="flex items-center gap-2">
-              <KeyRound className="h-5 w-5 text-primary" />
-              <CardTitle>Keamanan & Password</CardTitle>
+        <div className="rounded-xl border bg-card p-6 text-card-foreground shadow-sm ring-1 ring-foreground/10">
+          <div className="flex items-center gap-2 mb-1">
+            <KeyRound className="h-5 w-5 text-primary" />
+            <h2 className="text-base font-semibold">Keamanan &amp; Password</h2>
+          </div>
+          <p className="text-sm text-muted-foreground mb-5">
+            Perbarui kata sandi login secara berkala untuk menjaga keamanan.
+          </p>
+          <form onSubmit={handleUpdatePassword} className="space-y-4">
+            <div className="space-y-2">
+              <label htmlFor="current-pw" className="text-sm font-medium">Password Saat Ini</label>
+              <input
+                id="current-pw"
+                type="password"
+                placeholder="••••••••"
+                value={currentPassword}
+                onChange={(e) => setCurrentPassword(e.target.value)}
+                className="flex h-9 w-full rounded-lg border border-input bg-transparent px-3 py-1 text-sm shadow-sm transition-colors placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+              />
             </div>
-            <CardDescription>
-              Perbarui kata sandi login secara berkala untuk menjaga keamanan.
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <form onSubmit={handleUpdatePassword} className="space-y-4">
-              <div className="space-y-2">
-                <Label htmlFor="current-pw">Password Saat Ini</Label>
-                <Input
-                  id="current-pw"
-                  type="password"
-                  placeholder="••••••••"
-                  value={currentPassword}
-                  onChange={(e) => setCurrentPassword(e.target.value)}
-                />
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="new-pw">Password Baru</Label>
-                <Input
-                  id="new-pw"
-                  type="password"
-                  placeholder="Minimal 6 karakter"
-                  value={newPassword}
-                  onChange={(e) => setNewPassword(e.target.value)}
-                />
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="confirm-pw">Konfirmasi Password Baru</Label>
-                <Input
-                  id="confirm-pw"
-                  type="password"
-                  placeholder="Ulangi password baru"
-                  value={confirmPassword}
-                  onChange={(e) => setConfirmPassword(e.target.value)}
-                />
-              </div>
-              <Button type="submit" disabled={isUpdating} className="w-full">
-                {isUpdating ? (
-                  <>
-                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                    Memperbarui...
-                  </>
-                ) : (
-                  <>
-                    <CheckCircle2 className="mr-2 h-4 w-4" />
-                    Simpan Perubahan Password
-                  </>
-                )}
-              </Button>
-            </form>
-          </CardContent>
-        </Card>
+            <div className="space-y-2">
+              <label htmlFor="new-pw" className="text-sm font-medium">Password Baru</label>
+              <input
+                id="new-pw"
+                type="password"
+                placeholder="Minimal 6 karakter"
+                value={newPassword}
+                onChange={(e) => setNewPassword(e.target.value)}
+                className="flex h-9 w-full rounded-lg border border-input bg-transparent px-3 py-1 text-sm shadow-sm transition-colors placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+              />
+            </div>
+            <div className="space-y-2">
+              <label htmlFor="confirm-pw" className="text-sm font-medium">Konfirmasi Password Baru</label>
+              <input
+                id="confirm-pw"
+                type="password"
+                placeholder="Ulangi password baru"
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+                className="flex h-9 w-full rounded-lg border border-input bg-transparent px-3 py-1 text-sm shadow-sm transition-colors placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+              />
+            </div>
+            <button
+              type="submit"
+              disabled={isUpdating}
+              className="inline-flex w-full items-center justify-center rounded-lg bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90 disabled:pointer-events-none disabled:opacity-50"
+            >
+              {isUpdating ? (
+                <>
+                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                  Memperbarui...
+                </>
+              ) : (
+                <>
+                  <CheckCircle2 className="mr-2 h-4 w-4" />
+                  Simpan Perubahan Password
+                </>
+              )}
+            </button>
+          </form>
+        </div>
       </div>
     </div>
   );
