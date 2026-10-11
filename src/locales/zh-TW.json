@@ -126,13 +126,23 @@
   },
   "product_detail": {
     "back_to_catalog": "返回商品目錄",
-    "description": "商品說明",
+    "description": "商品描述",
     "ready_stock": "現貨供應",
-    "out_of_stock": "暫無庫存",
-    "location": "門市地點",
-    "stock_left": "剩餘數量",
+    "out_of_stock": "暫時缺貨",
+    "location": "門市位置",
+    "stock_left": "剩餘庫存",
     "unit": "台",
-    "buy_whatsapp": "透過 WhatsApp 購買 / 諮詢",
-    "price_notice": "價格與庫存隨時變動，購買前請先聯繫專人確認。"
+    "buy_whatsapp": "透過 WhatsApp 洽詢購買",
+    "price_notice": "價格與庫存隨時變動，購買前請先與客服人員確認。"
+  },
+  "badges": {
+    "featured": "精選",
+    "new": "全新",
+    "used": "二手",
+    "in_stock": "現貨",
+    "low_stock": "庫存緊張",
+    "out_of_stock": "缺貨",
+    "ask_unit": "立即諮詢",
+    "est": "約"
   }
 }

@@ -134,5 +134,15 @@
     "unit": "Units",
     "buy_whatsapp": "Buy via WhatsApp",
     "price_notice": "Prices and stock availability are subject to change. Please contact admin to confirm."
+  },
+  "badges": {
+    "featured": "Featured",
+    "new": "New",
+    "used": "Used",
+    "in_stock": "Available",
+    "low_stock": "Low Stock",
+    "out_of_stock": "Out of Stock",
+    "ask_unit": "Inquire This Item",
+    "est": "Est."
   }
 }

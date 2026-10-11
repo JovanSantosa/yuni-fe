@@ -125,14 +125,24 @@
     "inquiry_btn": "Hỏi về Mặt hàng này"
   },
   "product_detail": {
-    "back_to_catalog": "Quay lại Danh mục",
-    "description": "Mô tả chi tiết",
-    "ready_stock": "Có sẵn hàng",
+    "back_to_catalog": "Quay lại danh mục",
+    "description": "Mô tả sản phẩm",
+    "ready_stock": "Còn hàng",
     "out_of_stock": "Hết hàng",
     "location": "Chi nhánh có sẵn",
-    "stock_left": "Số lượng còn",
-    "unit": "Chiếc",
+    "stock_left": "Còn lại",
+    "unit": "sản phẩm",
     "buy_whatsapp": "Mua qua WhatsApp",
-    "price_notice": "Giá cả và số lượng hàng có thể thay đổi bất cứ lúc nào. Vui lòng liên hệ quản trị viên để xác nhận."
+    "price_notice": "Giá và tình trạng hàng có thể thay đổi. Vui lòng liên hệ admin để xác nhận."
+  },
+  "badges": {
+    "featured": "Nổi bật",
+    "new": "Mới",
+    "used": "Đã qua sử dụng",
+    "in_stock": "Còn hàng",
+    "low_stock": "Sắp hết hàng",
+    "out_of_stock": "Hết hàng",
+    "ask_unit": "Hỏi về sản phẩm",
+    "est": "Khoảng"
   }
 }

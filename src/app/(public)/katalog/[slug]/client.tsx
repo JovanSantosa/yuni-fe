@@ -85,7 +85,7 @@ export default function ProductDetailClient({ initialData, slug }: ClientProps) 
               </Badge>
             )}
             <Badge variant="outline" className="text-muted-foreground">
-              {product.condition === "new" ? "Baru" : "Bekas"}
+              {product.condition === "new" ? t("badges.new", "Baru") : t("badges.used", "Bekas")}
             </Badge>
             <Badge 
               variant={product.stock_status === "Stok Habis" ? "destructive" : "outline"}
@@ -94,7 +94,11 @@ export default function ProductDetailClient({ initialData, slug }: ClientProps) 
                 product.stock_status === "Stok Menipis" && "border-orange-500/30 text-orange-600 dark:text-orange-400 bg-orange-500/10"
               )}
             >
-              {product.stock_status}
+              {product.stock_status === "Stok Habis"
+                ? t("badges.out_of_stock", "Stok Habis")
+                : product.stock_status === "Stok Menipis"
+                ? t("badges.low_stock", "Stok Menipis")
+                : t("badges.in_stock", "Tersedia")}
             </Badge>
           </div>
 
@@ -107,7 +111,7 @@ export default function ProductDetailClient({ initialData, slug }: ClientProps) 
               {formatTWD(product.price)}
             </p>
             <p className="text-muted-foreground">
-              Est. <span className="font-medium">{formatIDR(product.price_idr)}</span>
+              {t("badges.est", "Est.")} <span className="font-medium">{formatIDR(product.price_idr)}</span>
             </p>
           </div>
 

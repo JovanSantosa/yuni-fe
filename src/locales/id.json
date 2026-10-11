@@ -134,5 +134,15 @@
     "unit": "Unit",
     "buy_whatsapp": "Beli via WhatsApp",
     "price_notice": "Harga dan ketersediaan stok dapat berubah sewaktu-waktu. Silakan hubungi admin untuk konfirmasi."
+  },
+  "badges": {
+    "featured": "Unggulan",
+    "new": "Baru",
+    "used": "Bekas",
+    "in_stock": "Tersedia",
+    "low_stock": "Stok Menipis",
+    "out_of_stock": "Stok Habis",
+    "ask_unit": "Tanya Unit Ini",
+    "est": "Est."
   }
 }
