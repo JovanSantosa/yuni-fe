@@ -47,8 +47,9 @@ export default function ProfilPage() {
 
     setIsUpdating(true);
     try {
-      await fetchApi("/admin/profile/password", {
+      await fetchApi("/profile/password", {
         method: "PUT",
+        requireAuth: true,
         body: JSON.stringify({
           current_password: currentPassword,
           new_password: newPassword,

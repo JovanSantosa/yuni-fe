@@ -45,6 +45,7 @@ export default function ProductDetailClient({ initialData, slug }: ClientProps) 
               src={activeImage}
               alt={product.name}
               fill
+              unoptimized
               className="object-cover"
               priority
               sizes="(max-width: 768px) 100vw, 50vw"
@@ -68,6 +69,7 @@ export default function ProductDetailClient({ initialData, slug }: ClientProps) 
                     src={img.url}
                     alt={`Thumbnail`}
                     fill
+                    unoptimized
                     className="object-cover"
                   />
                 </button>
