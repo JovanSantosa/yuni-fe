@@ -97,8 +97,8 @@ export async function fetchApi(endpoint: string, options: FetchOptions = {}) {
  * Fetcher for SWR
  */
 export const swrFetcher = async (url: string) => {
-  // Check if it's an admin endpoint to attach token
-  const requireAuth = url.startsWith("/admin");
+  // Check if it's an admin or authenticated endpoint to attach token
+  const requireAuth = url.startsWith("/admin") || url === "/user" || url.startsWith("/user");
   const res = await fetchApi(url, { requireAuth });
   return res; 
 };

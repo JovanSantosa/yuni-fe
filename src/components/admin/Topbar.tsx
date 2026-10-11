@@ -87,7 +87,7 @@ export function Topbar() {
             <DropdownMenuSeparator />
             <DropdownMenuItem
               onClick={() => {
-                window.location.href = "/admin/profil";
+                window.location.assign("/admin/profil");
               }}
               className="cursor-pointer"
             >
