@@ -30,7 +30,7 @@ export default function Home() {
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
 
   // Dynamic Content from Settings (Already resolved to current locale by Laravel backend)
-  const cleanHeroTitle = (settings?.hero_title || t("hero.badge", "Konter HP Terpercaya di Taichung")).replace(/\.+$/, "");
+  const cleanHeroTitle = (settings?.hero_title || t("hero.title", "Konter HP Terpercaya di Taichung")).replace(/\.+$/, "");
   const heroSubtitle = settings?.hero_subtitle || t("hero.badge_sub", "Jual beli HP, laptop, MacBook, iPad, tablet, dan aksesoris baru & bekas. Harga termurah dengan kualitas terbaik.");
   const aboutText = settings?.about_text || t("about.badge_location", "Yuni Counter telah melayani kebutuhan handphone dan gadget di Taichung, Taiwan sejak tahun 2004.");
   

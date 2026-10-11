@@ -13,21 +13,45 @@ interface PageProps {
 
 // Generate SEO Metadata dynamically based on product
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  // Await the params object (required in Next.js 15)
   const resolvedParams = await params;
   const slug = resolvedParams.slug;
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://yuni.vanzodev.my.id";
 
   try {
     const response = await fetchApi(`/products/${slug}`);
     const product: Product = response.data;
+    const title = product.meta_title || `${product.name} | Yuni Counter`;
+    const description =
+      product.meta_description ||
+      product.description?.substring(0, 160) ||
+      `Beli ${product.name} kualitas terbaik harga termurah di Yuni Counter Taichung, Taiwan.`;
+    const firstImage = product.images?.[0]?.url || `${baseUrl}/og-image.jpg`;
 
     return {
-      title: product.meta_title || `${product.name} | Yuni Counter`,
-      description: product.meta_description || product.description?.substring(0, 160),
+      title,
+      description,
+      alternates: {
+        canonical: `${baseUrl}/katalog/${slug}`,
+      },
       openGraph: {
-        title: product.meta_title || product.name,
-        description: product.meta_description || product.description?.substring(0, 160) || "",
-        images: product.images?.[0]?.url ? [product.images[0].url] : [],
+        title,
+        description,
+        url: `${baseUrl}/katalog/${slug}`,
+        type: "website",
+        images: [
+          {
+            url: firstImage,
+            width: 800,
+            height: 600,
+            alt: product.name,
+          },
+        ],
+      },
+      twitter: {
+        card: "summary_large_image",
+        title,
+        description,
+        images: [firstImage],
       },
     };
   } catch (error) {
@@ -38,7 +62,6 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 }
 
 export default async function ProductPage({ params }: PageProps) {
-  // Await the params object (required in Next.js 15)
   const resolvedParams = await params;
   const slug = resolvedParams.slug;
 
@@ -46,8 +69,72 @@ export default async function ProductPage({ params }: PageProps) {
     // Fetch initial data on server for SSR
     const response = await fetchApi(`/products/${slug}`);
     const initialData: Product = response.data;
+    const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://yuni.vanzodev.my.id";
 
-    return <ProductDetailClient initialData={initialData} slug={slug} />;
+    const productSchema = {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      name: initialData.name,
+      description: initialData.description,
+      image: initialData.images?.map((img) => img.url) || [],
+      offers: {
+        "@type": "Offer",
+        priceCurrency: "TWD",
+        price: initialData.price,
+        itemCondition:
+          initialData.condition === "new"
+            ? "https://schema.org/NewCondition"
+            : "https://schema.org/UsedCondition",
+        availability:
+          initialData.stock > 0
+            ? "https://schema.org/InStock"
+            : "https://schema.org/OutOfStock",
+        seller: {
+          "@type": "ElectronicsStore",
+          name: "Yuni Counter",
+          url: baseUrl,
+        },
+      },
+    };
+
+    const breadcrumbSchema = {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Beranda",
+          item: baseUrl,
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Katalog",
+          item: `${baseUrl}/katalog`,
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: initialData.name,
+          item: `${baseUrl}/katalog/${slug}`,
+        },
+      ],
+    };
+
+    return (
+      <>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+        />
+        <ProductDetailClient initialData={initialData} slug={slug} />
+      </>
+    );
   } catch (error) {
     notFound();
   }
