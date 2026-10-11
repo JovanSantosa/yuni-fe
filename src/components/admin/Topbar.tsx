@@ -85,11 +85,14 @@ export function Topbar() {
               </div>
             </DropdownMenuLabel>
             <DropdownMenuSeparator />
-            <DropdownMenuItem asChild className="cursor-pointer">
-              <Link href="/admin/profil" className="flex items-center w-full">
-                <User className="mr-2 h-4 w-4" />
-                <span>Profil Akun</span>
-              </Link>
+            <DropdownMenuItem
+              onClick={() => {
+                window.location.href = "/admin/profil";
+              }}
+              className="cursor-pointer"
+            >
+              <User className="mr-2 h-4 w-4" />
+              <span>Profil Akun</span>
             </DropdownMenuItem>
             <DropdownMenuSeparator />
             <DropdownMenuItem onClick={handleLogout} className="text-destructive cursor-pointer focus:bg-destructive/10 focus:text-destructive">
