@@ -45,13 +45,12 @@ export default function ProductDetailClient({ initialData, slug }: ClientProps) 
               src={activeImage}
               alt={product.name}
               fill
-              unoptimized
               className="object-cover"
               priority
               sizes="(max-width: 768px) 100vw, 50vw"
             />
           </div>
-          
+            
           {product.images && product.images.length > 1 && (
             <div className="grid grid-cols-5 gap-3">
               {product.images.map((img) => (
@@ -69,7 +68,6 @@ export default function ProductDetailClient({ initialData, slug }: ClientProps) 
                     src={img.url}
                     alt={`Thumbnail`}
                     fill
-                    unoptimized
                     className="object-cover"
                   />
                 </button>
