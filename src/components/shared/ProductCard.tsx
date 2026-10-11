@@ -34,15 +34,15 @@ export function ProductCard({ product }: ProductCardProps) {
   return (
     <div className="group rounded-[var(--radius-lg)] overflow-hidden relative bg-[var(--card-bg)] border border-[var(--border)] text-left flex flex-col transition-all duration-300 hover:border-[var(--border-red)] hover:shadow-[0_12px_32px_rgba(227,48,56,0.12)] hover:-translate-y-1 h-full">
       <Link href={`/katalog/${product.slug}`} className="flex-1 flex flex-col">
-        {/* Media Thumbnail */}
-        <div className="w-full h-[180px] overflow-hidden bg-[var(--card-media-bg)] relative">
+        {/* Media Thumbnail — 4:3 aspect ratio */}
+        <div className="w-full aspect-[4/3] overflow-hidden bg-[var(--card-media-bg)] relative">
           <Image
             src={imageUrl}
             alt={product.name}
             fill
             unoptimized
             className="object-cover transition-transform duration-500 group-hover:scale-[1.06]"
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
           />
           
           {/* Top Left Badges */}
