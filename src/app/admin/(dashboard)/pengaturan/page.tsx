@@ -276,28 +276,72 @@ export default function PengaturanPage() {
   // --- FAQ Modal & Actions ---
   const [faqModalOpen, setFaqModalOpen] = useState(false);
   const [editingFaqId, setEditingFaqId] = useState<number | null>(null);
-  const [faqForm, setFaqForm] = useState({
-    question: "",
-    answer: "",
+  const [faqLang, setFaqLang] = useState<"id" | "zh-TW" | "en" | "vi" | "th">("id");
+  const [faqForm, setFaqForm] = useState<{
+    question: Record<string, string>;
+    answer: Record<string, string>;
+  }>({
+    question: { id: "", "zh-TW": "", en: "", vi: "", th: "" },
+    answer: { id: "", "zh-TW": "", en: "", vi: "", th: "" },
   });
+
+  const parseFaqField = (raw: any, fallback: string = ""): Record<string, string> => {
+    if (raw && typeof raw === "object" && !Array.isArray(raw)) {
+      return {
+        id: raw.id || fallback || "",
+        "zh-TW": raw["zh-TW"] || "",
+        en: raw.en || "",
+        vi: raw.vi || "",
+        th: raw.th || "",
+      };
+    }
+    if (typeof raw === "string" && raw.startsWith("{")) {
+      try {
+        const parsed = JSON.parse(raw);
+        return {
+          id: parsed.id || fallback || "",
+          "zh-TW": parsed["zh-TW"] || "",
+          en: parsed.en || "",
+          vi: parsed.vi || "",
+          th: parsed.th || "",
+        };
+      } catch (e) {}
+    }
+    return {
+      id: typeof raw === "string" ? raw : fallback,
+      "zh-TW": "",
+      en: "",
+      vi: "",
+      th: "",
+    };
+  };
 
   const openAddFaq = () => {
     setEditingFaqId(null);
-    setFaqForm({ question: "", answer: "" });
+    setFaqLang("id");
+    setFaqForm({
+      question: { id: "", "zh-TW": "", en: "", vi: "", th: "" },
+      answer: { id: "", "zh-TW": "", en: "", vi: "", th: "" },
+    });
     setFaqModalOpen(true);
   };
 
   const openEditFaq = (item: any) => {
     setEditingFaqId(item.id);
+    setFaqLang("id");
     setFaqForm({
-      question: item.question,
-      answer: item.answer,
+      question: parseFaqField(item.raw_question || item.question, item.question),
+      answer: parseFaqField(item.raw_answer || item.answer, item.answer),
     });
     setFaqModalOpen(true);
   };
 
   const handleSaveFaq = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!faqForm.question.id) {
+      toast.error("Pertanyaan Bahasa Indonesia wajib diisi sebagai default.");
+      return;
+    }
     try {
       if (editingFaqId) {
         await fetchApi(`/admin/faqs/${editingFaqId}`, {
@@ -1028,30 +1072,80 @@ export default function PengaturanPage() {
 
       {/* Modal FAQ */}
       <Dialog open={faqModalOpen} onOpenChange={setFaqModalOpen}>
-        <DialogContent>
+        <DialogContent className="max-w-xl">
           <DialogHeader>
             <DialogTitle>{editingFaqId ? "Edit Pertanyaan FAQ" : "Tambah FAQ Baru"}</DialogTitle>
           </DialogHeader>
-          <form onSubmit={handleSaveFaq} className="space-y-4 pt-2">
+
+          {/* Tab Pilihan Bahasa */}
+          <div className="flex border-b border-border gap-2 pb-2 overflow-x-auto text-xs">
+            {[
+              { code: "id", label: "🇮🇩 Indonesia" },
+              { code: "zh-TW", label: "🇹🇼 Taiwan (繁中)" },
+              { code: "en", label: "🇬🇧 English" },
+              { code: "vi", label: "🇻🇳 Tiếng Việt" },
+              { code: "th", label: "🇹🇭 ภาษาไทย" },
+            ].map((lang) => (
+              <button
+                key={lang.code}
+                type="button"
+                onClick={() => setFaqLang(lang.code as any)}
+                className={`px-3 py-1.5 rounded-md font-medium transition-all ${
+                  faqLang === lang.code
+                    ? "bg-primary text-primary-foreground shadow-sm"
+                    : "text-muted-foreground hover:bg-muted"
+                }`}
+              >
+                {lang.label}
+              </button>
+            ))}
+          </div>
+
+          <form onSubmit={handleSaveFaq} className="space-y-4 pt-1">
             <div>
-              <label className="text-xs font-semibold">Pertanyaan</label>
+              <div className="flex items-center justify-between mb-1">
+                <label className="text-xs font-semibold">
+                  Pertanyaan ({faqLang.toUpperCase()})
+                </label>
+                {faqLang === "id" && (
+                  <span className="text-[10px] text-destructive font-medium">*Wajib (Default)</span>
+                )}
+              </div>
               <Input 
-                value={faqForm.question} 
-                onChange={(e) => setFaqForm({ ...faqForm, question: e.target.value })} 
-                placeholder="Apakah bisa tukar tambah HP lama?" 
-                required 
+                value={faqForm.question[faqLang] || ""} 
+                onChange={(e) => setFaqForm({
+                  ...faqForm,
+                  question: { ...faqForm.question, [faqLang]: e.target.value }
+                })} 
+                placeholder={faqLang === "id" ? "Apakah bisa tukar tambah HP lama?" : `Pertanyaan dalam bahasa ${faqLang}`} 
+                required={faqLang === "id"}
               />
             </div>
             <div>
-              <label className="text-xs font-semibold">Jawaban</label>
+              <div className="flex items-center justify-between mb-1">
+                <label className="text-xs font-semibold">
+                  Jawaban ({faqLang.toUpperCase()})
+                </label>
+                {faqLang === "id" && (
+                  <span className="text-[10px] text-destructive font-medium">*Wajib (Default)</span>
+                )}
+              </div>
               <Textarea 
-                value={faqForm.answer} 
-                onChange={(e) => setFaqForm({ ...faqForm, answer: e.target.value })} 
-                placeholder="Tentu! Kami menerima tukar tambah..." 
-                rows={4} 
-                required 
+                value={faqForm.answer[faqLang] || ""} 
+                onChange={(e) => setFaqForm({
+                  ...faqForm,
+                  answer: { ...faqForm.answer, [faqLang]: e.target.value }
+                })} 
+                placeholder={faqLang === "id" ? "Tentu! Kami menerima tukar tambah..." : `Jawaban dalam bahasa ${faqLang}`} 
+                rows={5} 
+                required={faqLang === "id"}
               />
             </div>
+
+            <p className="text-[11px] text-muted-foreground bg-muted/40 p-2.5 rounded-md">
+              💡 <strong>Tips:</strong> Cukup isi Bahasa Indonesia sebagai default. Jika bahasa lain (Taiwan, Inggris, Vietnam, Thailand) tidak diisi, sistem otomatis menggunakan teks Bahasa Indonesia saat pengunjung mengganti bahasa.
+            </p>
+
             <div className="flex justify-end gap-2 pt-2">
               <Button type="button" variant="outline" onClick={() => setFaqModalOpen(false)}>Batal</Button>
               <Button type="submit" className="btn-gradient-cta !text-xs">Simpan FAQ</Button>
