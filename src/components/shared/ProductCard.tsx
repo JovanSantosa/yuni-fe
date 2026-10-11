@@ -32,7 +32,7 @@ export function ProductCard({ product }: ProductCardProps) {
   const waUrl = product.wa_link || `https://wa.me/886987872888?text=${waMessage}`;
 
   return (
-    <div className="group rounded-[var(--radius-lg)] overflow-hidden relative bg-[var(--card-bg)] border border-[var(--border)] text-left flex flex-col transition-all duration-300 [@media(hover:hover)]:hover:border-[var(--border-red)] [@media(hover:hover)]:hover:shadow-[0_12px_32px_rgba(227,48,56,0.12)] [@media(hover:hover)]:hover:-translate-y-1 h-full">
+    <div className="group rounded-[var(--radius-lg)] overflow-hidden relative bg-[var(--card-bg)] border border-[var(--border)] text-left flex flex-col transition-all duration-300 hover:border-[var(--border-red)] hover:shadow-[0_12px_32px_rgba(227,48,56,0.12)] hover:-translate-y-1 active:translate-y-0 active:border-[var(--border)] active:shadow-none h-full">
       <Link href={`/katalog/${product.slug}`} className="flex-1 flex flex-col">
         {/* Media Thumbnail — 4:3 aspect ratio */}
         <div className="w-full aspect-[4/3] overflow-hidden bg-[var(--card-media-bg)] relative">
