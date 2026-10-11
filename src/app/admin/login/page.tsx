@@ -184,11 +184,18 @@ export default function LoginPage() {
         />
 
         <div className="relative z-10 flex items-center gap-3">
-          <div className="w-10 h-10 rounded-xl bg-[var(--red)] text-white flex items-center justify-center shrink-0 shadow-lg shadow-red-600/30">
-            <ShoppingBag className="w-5 h-5" />
+          <div className="w-12 h-12 rounded-2xl overflow-hidden border border-white/20 shrink-0 shadow-lg shadow-black/50 relative">
+            <Image
+              src="/logo.png"
+              alt="Yuni Counter Logo"
+              fill
+              className="object-cover"
+              sizes="48px"
+              priority
+            />
           </div>
           <div>
-            <h3 className="font-heading text-lg font-bold text-white leading-tight">Yuni Counter</h3>
+            <h3 className="font-heading text-xl font-bold text-white leading-tight">Yuni Counter</h3>
             <span className="text-[10px] tracking-[2px] font-semibold text-[var(--red-light)] uppercase">Taichung, Taiwan</span>
           </div>
         </div>

@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { ShoppingBag, Moon, Sun, X, LogIn, Globe, ChevronDown } from "lucide-react";
 import { useTheme } from "next-themes";
@@ -114,8 +115,15 @@ export function Navbar() {
         }`}
       >
         <Link href="/" className="flex items-center gap-2.5">
-          <div className="w-10 h-10 rounded-lg bg-[var(--red)] text-white flex items-center justify-center shrink-0">
-            <ShoppingBag className="w-5 h-5" />
+          <div className="w-10 h-10 rounded-xl overflow-hidden border border-white/10 shrink-0 shadow-sm relative">
+            <Image
+              src="/logo.png"
+              alt="Yuni Counter Logo"
+              fill
+              className="object-cover"
+              sizes="40px"
+              priority
+            />
           </div>
           <div className="flex flex-col">
             <h6 className="font-heading text-[15px] md:text-base font-bold text-[var(--text-heading)] leading-[1.2]">

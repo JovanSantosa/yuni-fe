@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -9,7 +10,6 @@ import {
   Package,
   Tags,
   Settings,
-  ShoppingBag,
   User,
 } from "lucide-react";
 
@@ -30,10 +30,16 @@ export function Sidebar({ onItemClick }: { onItemClick?: () => void } = {}) {
         <Link 
           href="/" 
           onClick={onItemClick}
-          className="flex items-center gap-2 text-sidebar-foreground transition-opacity hover:opacity-80"
+          className="flex items-center gap-2.5 text-sidebar-foreground transition-opacity hover:opacity-80"
         >
-          <div className="flex h-8 w-8 items-center justify-center rounded-md bg-sidebar-primary text-sidebar-primary-foreground">
-            <ShoppingBag className="h-5 w-5" />
+          <div className="flex h-9 w-9 items-center justify-center rounded-xl overflow-hidden border border-sidebar-border shadow-sm shrink-0 relative">
+            <Image
+              src="/logo.png"
+              alt="Yuni Counter Logo"
+              fill
+              className="object-cover"
+              sizes="36px"
+            />
           </div>
           <span className="font-semibold text-lg tracking-tight">Yuni Counter</span>
         </Link>

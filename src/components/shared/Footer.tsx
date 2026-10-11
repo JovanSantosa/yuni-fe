@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { ShoppingBag, MapPin, Phone, MessageCircle } from "lucide-react";
+import Image from "next/image";
+import { MapPin, Phone, MessageCircle } from "lucide-react";
 import { useSettings } from "@/hooks/useCoreData";
 
 export function Footer() {
@@ -32,8 +33,14 @@ export function Footer() {
           {/* Column 1: Brand & About */}
           <div>
             <div className="flex items-center gap-2.5 mb-4">
-              <div className="w-9 h-9 rounded-lg bg-[var(--red)] flex items-center justify-center shrink-0">
-                <ShoppingBag className="w-5 h-5 text-white" />
+              <div className="w-10 h-10 rounded-xl overflow-hidden border border-white/10 shrink-0 shadow-sm relative">
+                <Image
+                  src="/logo.png"
+                  alt="Yuni Counter Logo"
+                  fill
+                  className="object-cover"
+                  sizes="40px"
+                />
               </div>
               <div className="flex flex-col">
                 <h6 className="font-heading text-[15px] font-bold text-white leading-tight">
