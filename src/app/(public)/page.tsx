@@ -353,16 +353,16 @@ export default function Home() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
             
-            <div className="p-6 md:p-8 border border-[var(--border-red)] shadow-[0_4px_20px_rgba(227,48,56,0.12)] rounded-[var(--radius-lg)] bg-[var(--card-bg)] text-center transition-all">
+            <div className="p-6 md:p-8 border border-[var(--border)] hover:border-[var(--border-red)] hover:shadow-[0_4px_20px_rgba(227,48,56,0.12)] rounded-[var(--radius-lg)] bg-[var(--card-bg)] text-center transition-all hover:-translate-y-0.5">
               <div className="w-[52px] h-[52px] mx-auto mb-4 rounded-full bg-[var(--red-soft)] text-[var(--red)] flex items-center justify-center">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
               </div>
-              <div className="font-heading text-[28px] font-bold text-[var(--red-20)] mb-2">01</div>
+              <div className="font-heading text-[28px] font-bold text-gray-500/20 mb-2">01</div>
               <h3 className="font-heading text-[18px] font-semibold mb-2.5 text-[var(--text-heading)]">{t("features.f1_title", "100% Jujur & Transparan")}</h3>
               <p className="text-[14px] text-[var(--body-text)] leading-[1.6] font-light">{t("features.f1_desc", "Kondisi setiap produk kami sampaikan apa adanya...")}</p>
             </div>
 
-            <div className="p-6 md:p-8 border border-[var(--border)] hover:shadow-[0_4px_20px_rgba(0,0,0,0.08)] rounded-[var(--radius-lg)] bg-[var(--card-bg)] text-center transition-all hover:-translate-y-0.5">
+            <div className="p-6 md:p-8 border border-[var(--border)] hover:border-[var(--border-red)] hover:shadow-[0_4px_20px_rgba(227,48,56,0.12)] rounded-[var(--radius-lg)] bg-[var(--card-bg)] text-center transition-all hover:-translate-y-0.5">
               <div className="w-[52px] h-[52px] mx-auto mb-4 rounded-full bg-[var(--red-soft)] text-[var(--red)] flex items-center justify-center">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><line x1="12" x2="12" y1="1" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
               </div>
@@ -371,7 +371,7 @@ export default function Home() {
               <p className="text-[14px] text-[var(--body-text)] leading-[1.6] font-light">{t("features.f2_desc", "Kami menawarkan harga termurah...")}</p>
             </div>
 
-            <div className="p-6 md:p-8 border border-[var(--border)] hover:shadow-[0_4px_20px_rgba(0,0,0,0.08)] rounded-[var(--radius-lg)] bg-[var(--card-bg)] text-center transition-all hover:-translate-y-0.5">
+            <div className="p-6 md:p-8 border border-[var(--border)] hover:border-[var(--border-red)] hover:shadow-[0_4px_20px_rgba(227,48,56,0.12)] rounded-[var(--radius-lg)] bg-[var(--card-bg)] text-center transition-all hover:-translate-y-0.5">
               <div className="w-[52px] h-[52px] mx-auto mb-4 rounded-full bg-[var(--red-soft)] text-[var(--red)] flex items-center justify-center">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
               </div>
@@ -380,7 +380,7 @@ export default function Home() {
               <p className="text-[14px] text-[var(--body-text)] leading-[1.6] font-light">{t("features.f3_desc", "Sejak 2004, ribuan pelanggan...")}</p>
             </div>
 
-            <div className="p-6 md:p-8 border border-[var(--border)] hover:shadow-[0_4px_20px_rgba(0,0,0,0.08)] rounded-[var(--radius-lg)] bg-[var(--card-bg)] text-center transition-all hover:-translate-y-0.5">
+            <div className="p-6 md:p-8 border border-[var(--border)] hover:border-[var(--border-red)] hover:shadow-[0_4px_20px_rgba(227,48,56,0.12)] rounded-[var(--radius-lg)] bg-[var(--card-bg)] text-center transition-all hover:-translate-y-0.5">
               <div className="w-[52px] h-[52px] mx-auto mb-4 rounded-full bg-[var(--red-soft)] text-[var(--red)] flex items-center justify-center">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><path d="M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>
               </div>
@@ -389,7 +389,7 @@ export default function Home() {
               <p className="text-[14px] text-[var(--body-text)] leading-[1.6] font-light">{t("features.f4_desc", "Tukarkan HP lama Anda...")}</p>
             </div>
 
-            <div className="p-6 md:p-8 border border-[var(--border)] hover:shadow-[0_4px_20px_rgba(0,0,0,0.08)] rounded-[var(--radius-lg)] bg-[var(--card-bg)] text-center transition-all hover:-translate-y-0.5">
+            <div className="p-6 md:p-8 border border-[var(--border)] hover:border-[var(--border-red)] hover:shadow-[0_4px_20px_rgba(227,48,56,0.12)] rounded-[var(--radius-lg)] bg-[var(--card-bg)] text-center transition-all hover:-translate-y-0.5">
               <div className="w-[52px] h-[52px] mx-auto mb-4 rounded-full bg-[var(--red-soft)] text-[var(--red)] flex items-center justify-center">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>
               </div>
@@ -398,7 +398,7 @@ export default function Home() {
               <p className="text-[14px] text-[var(--body-text)] leading-[1.6] font-light">{t("features.f5_desc", "Dari HP, laptop, MacBook...")}</p>
             </div>
 
-            <div className="p-6 md:p-8 border border-[var(--border)] hover:shadow-[0_4px_20px_rgba(0,0,0,0.08)] rounded-[var(--radius-lg)] bg-[var(--card-bg)] text-center transition-all hover:-translate-y-0.5">
+            <div className="p-6 md:p-8 border border-[var(--border)] hover:border-[var(--border-red)] hover:shadow-[0_4px_20px_rgba(227,48,56,0.12)] rounded-[var(--radius-lg)] bg-[var(--card-bg)] text-center transition-all hover:-translate-y-0.5">
               <div className="w-[52px] h-[52px] mx-auto mb-4 rounded-full bg-[var(--red-soft)] text-[var(--red)] flex items-center justify-center">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
               </div>
