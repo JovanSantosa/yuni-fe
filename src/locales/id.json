@@ -121,6 +121,7 @@
     "sort_price_asc": "Harga: Terendah",
     "sort_price_desc": "Harga: Tertinggi",
     "sort_name_asc": "Nama A-Z",
+    "showing_count": "Menampilkan {count} produk",
     "empty_title": "Tidak Ada Produk yang Cocok",
     "empty_desc": "Coba ubah kata kunci pencarian atau reset filter kategori & kondisi Anda.",
     "inquiry_btn": "Tanya Unit Ini"

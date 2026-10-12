@@ -100,25 +100,22 @@ export default function KatalogClient() {
           <div className="flex gap-1.5 md:gap-2 overflow-x-auto pb-3 mb-4 md:mb-7 scrollbar-hide -mx-4 px-4 md:mx-0 md:px-0">
             <button 
               onClick={() => { setCategory("all"); setPage(1); }}
-              className={`px-[14px] md:px-[18px] py-[7px] md:py-[9px] rounded-[var(--radius-pill)] text-[12px] md:text-[13px] font-medium whitespace-nowrap cursor-pointer transition-all inline-flex items-center gap-1.5 md:gap-2 border ${
+              className={`px-[16px] md:px-[20px] py-[7px] md:py-[9px] rounded-[var(--radius-pill)] text-[12px] md:text-[13px] font-medium whitespace-nowrap cursor-pointer transition-all inline-flex items-center justify-center border ${
                 category === "all" 
-                  ? "bg-[var(--red)] text-white border-[var(--red)]" 
+                  ? "bg-[var(--red)] text-white border-[var(--red)] shadow-[0_2px_10px_rgba(227,48,56,0.3)]" 
                   : "bg-[var(--chip-bg)] text-[var(--text-heading)] border-[var(--border)] hover:border-[var(--red)] hover:text-[var(--red)]"
               }`}
             >
               {t("catalog_page.all_categories", "Semua Kategori")}
-              <span className={`text-[10px] md:text-[11px] px-1.5 md:px-[7px] py-[2px] rounded-xl ${category === "all" ? "bg-white/25 text-white" : "bg-[var(--chip-count-bg)]"}`}>
-                {totalCount > 0 ? totalCount : '-'}
-              </span>
             </button>
 
             {categories?.map((cat) => (
               <button 
                 key={cat.id}
                 onClick={() => { setCategory(cat.slug); setPage(1); }}
-                className={`px-[14px] md:px-[18px] py-[7px] md:py-[9px] rounded-[var(--radius-pill)] text-[12px] md:text-[13px] font-medium whitespace-nowrap cursor-pointer transition-all inline-flex items-center gap-1.5 md:gap-2 border ${
+                className={`px-[16px] md:px-[20px] py-[7px] md:py-[9px] rounded-[var(--radius-pill)] text-[12px] md:text-[13px] font-medium whitespace-nowrap cursor-pointer transition-all inline-flex items-center justify-center border ${
                   category === cat.slug 
-                    ? "bg-[var(--red)] text-white border-[var(--red)]" 
+                    ? "bg-[var(--red)] text-white border-[var(--red)] shadow-[0_2px_10px_rgba(227,48,56,0.3)]" 
                     : "bg-[var(--chip-bg)] text-[var(--text-heading)] border-[var(--border)] hover:border-[var(--red)] hover:text-[var(--red)]"
                 }`}
               >
@@ -174,6 +171,13 @@ export default function KatalogClient() {
               </select>
             </div>
 
+          </div>
+
+          {/* Result Count Info */}
+          <div className="flex items-center justify-between text-[12px] md:text-[13px] text-[var(--body-text)] mb-5 px-1 font-light">
+            <span>
+              {t("catalog_page.showing_count", "Menampilkan {count} produk").replace("{count}", String(totalCount))}
+            </span>
           </div>
 
           {/* Products Grid Container */}

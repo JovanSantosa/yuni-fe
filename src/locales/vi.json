@@ -121,7 +121,8 @@
     "sort_price_asc": "Giá: Từ thấp đến cao",
     "sort_price_desc": "Giá: Từ cao xuống thấp",
     "sort_name_asc": "Tên A-Z",
-    "empty_title": "Không có Sản phẩm Phù hợp",
+    "showing_count": "Hiển thị {count} sản phẩm",
+    "empty_title": "Không có sản phẩm phù hợp",
     "empty_desc": "Hãy thử sửa đổi từ khóa tìm kiếm hoặc đặt lại bộ lọc.",
     "inquiry_btn": "Hỏi về Mặt hàng này"
   },

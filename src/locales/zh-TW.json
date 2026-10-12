@@ -121,7 +121,8 @@
     "sort_price_asc": "價格：由低到高",
     "sort_price_desc": "價格：由高到低",
     "sort_name_asc": "名稱 A-Z",
-    "empty_title": "查無符合條件的商品",
+    "showing_count": "共顯示 {count} 件商品",
+    "empty_title": "沒有符合條件的商品",
     "empty_desc": "請嘗試更換搜尋關鍵字，或重設篩選條件。",
     "inquiry_btn": "詢問此商品"
   },
